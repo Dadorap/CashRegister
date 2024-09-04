@@ -26,7 +26,7 @@ namespace _02CSharpInlämningsuppgift
             int userChoice;
 
 
-
+            // this will check if user input is a string or the number is lower then 0 and higher then 2
             while (!int.TryParse(Console.ReadLine(), out userChoice) || userChoice < 0 || userChoice > 2)
             {
                 Console.Write("Invalid input try again: ");
