@@ -22,8 +22,25 @@ namespace _02CSharpInlämningsuppgift
                 int displyNum = i == 0 ? 1 : i == 1 ? 2 : 0;
                 Console.WriteLine($"{displyNum}. {list[i]}");
             }
+            Console.Write("Choose a number from the menue listed above: ");
+            int userChoice;
+
+
+
+            while (!int.TryParse(Console.ReadLine(), out userChoice) || userChoice < 0 || userChoice > 2)
+            {
+                Console.Write("Invalid input try again: ");
+            }
+
+
+
+
+
 
             Console.ReadKey();
         }
+
+
+
     }
 }
