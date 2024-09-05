@@ -32,6 +32,19 @@ namespace _02CSharpInlämningsuppgift
                 Console.Write("Invalid input try again: ");
             }
 
+            switch (userChoice)
+            {
+                case 1:
+                    Console.WriteLine("case num 1");
+                    break;
+                case 2:
+                    Console.WriteLine("case num 2");
+                    break;
+                default:
+                    Console.WriteLine("case num 0");
+                    break;
+            }
+
 
 
 
