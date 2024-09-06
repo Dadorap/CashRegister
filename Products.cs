@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading.Channels;
 using System.Threading.Tasks;
 
 namespace _02CSharpInlämningsuppgift
@@ -22,10 +23,10 @@ namespace _02CSharpInlämningsuppgift
         }
 
 
+        public override string ToString()
+        {
+            return $"{Name} - {Id}";
+        }
 
-
-
-
-
-    }
+}
 }

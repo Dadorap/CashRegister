@@ -6,10 +6,15 @@ namespace _02CSharpInlämningsuppgift
     {
         static void Main(string[] args)
         {
+
+
             Menu.menu();
 
-            
+
+
         }
     }
 
 }
+
+

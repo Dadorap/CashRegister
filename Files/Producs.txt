@@ -1,6 +1,6 @@
 300 Bannan 22,50 kg
 301 Tomater 33,50 kg
 302 Kiwi 39,50 kg
-303 Blåbär 49,50 kg
+303 Paprika 49,50 kg
 304 Sallad 15,50 kg
 305 Gurka 18,50 pc
