@@ -51,8 +51,8 @@ namespace _02CSharpInlämningsuppgift
                     switch (currentSelect)
                     {
                         case 0:
-                            Customer.Kassa();
-                            break;
+                            NewCustomer.Kassa();
+                            return;
                         case 1:
                             Console.WriteLine("Admin selected.");
                             break;
@@ -60,7 +60,6 @@ namespace _02CSharpInlämningsuppgift
                             Exit.Close();
                             return; 
                     }
-                    Console.ReadKey();
                 }
             }
         }
