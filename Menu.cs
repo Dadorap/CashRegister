@@ -3,12 +3,15 @@ using System.Security;
 
 namespace _02CSharpInlämningsuppgift
 {
-    public class Menu
+    public class Menu 
     {
         public static void menu()
         {
             string[] list = { "New Customer", "Admin", "Exit" };
             int currentSelect = 0;
+
+
+
 
             while (true)
             {
@@ -54,7 +57,7 @@ namespace _02CSharpInlämningsuppgift
                             NewCustomer.Kassa();
                             return;
                         case 1:
-                            Console.WriteLine("Admin selected.");
+                            Admin.Test();
                             break;
                         case 2:
                             Exit.Close();

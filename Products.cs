@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,10 +24,11 @@ namespace _02CSharpInlämningsuppgift
         }
 
 
+
         public override string ToString()
         {
-            return $"{Name} - {Id}";
+            return $"{Id} - {Name} - {Price}/{Type}";
         }
 
-}
+    }
 }
