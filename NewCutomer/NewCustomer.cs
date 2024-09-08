@@ -9,39 +9,56 @@ namespace _02CSharpInlämningsuppgift.NewCutomer
 
         public static void Kassa()
         {
-            Console.Clear();
             List<Products> productsList = ProdInfoReader.ReadProducts();
 
-            DateTime currentDateTime = DateTime.Now;
-            Console.ForegroundColor = ConsoleColor.Green;
-            Console.WriteLine($"{currentDateTime}\nKASSA");
-            Console.ResetColor();
-            // space between the two sides
-            int horizantal = 30;
-
-            for (int y = 0; y < productsList.Count; y++)
+            while (true)
             {
-                Console.SetCursorPosition(horizantal, y);
-                Console.WriteLine($"{productsList[y].Name} -> ProdID: {productsList[y].Id}");
+
+                Console.Clear();
+
+                DateTime currentDateTime = DateTime.Now;
+                Console.ForegroundColor = ConsoleColor.Green;
+                Console.WriteLine($"KASSA");
+                Console.ResetColor();
+                // space between the two sides
+                int horizantal = 30;
+                int totalSum = 10;
+
+                for (int y = 0; y < productsList.Count; y++)
+                {
+                    Console.SetCursorPosition(horizantal, y);
+                    Console.WriteLine($"{productsList[y].Name} -> ProdID: {productsList[y].Id}");
+                }
+
+                Console.SetCursorPosition(0, 1);
+                Console.BackgroundColor = ConsoleColor.Red;
+                Console.WriteLine("KVITTO   " + currentDateTime + $"\nTOTAL: {totalSum}");
+                Console.ResetColor();
+                Console.Write("Kommandon: \n<ProdID> <Amount>\n<Pay>\n");
+                Console.Write("Kommando: ");
+                string userInput = Console.ReadLine().ToLower();
+
+                if (userInput == "pay")
+                {
+                    
+                    Console.WriteLine("thank come again!");
+                }
+                else
+                {
+                (int prodId, int amount) = InputSeparator.GetIdAmount(userInput);
+                (string prodName, decimal prodPrice) = ProductLookup.GetProdInfo(prodId);
+                }
+
+
+
+
+
+                Console.ReadKey();
             }
 
-            Console.SetCursorPosition(0, 2);
-            Console.Write("Kommandon: \n<ProdID> <Amount>\n<Pay>\n");
-            Console.Write("Kommando: ");
-            string userInput = Console.ReadLine();
-
-            (int prodId, int amount) = InputSeparator.GetIdAmount(userInput);
-            (string prodName, decimal prodPrice) = ProductLookup.GetProdInfo(prodId);
 
 
-
-
-
-            Console.ReadKey();
         }
-
-
-
 
 
     }
