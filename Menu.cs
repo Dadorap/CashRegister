@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Security;
+using _02CSharpInlämningsuppgift.NewCutomer;
 
 namespace _02CSharpInlämningsuppgift
 {

@@ -17,12 +17,11 @@ namespace _02CSharpInlämningsuppgift
             Console.WriteLine("You are in Admin class");
 
 
-            Program prodDisplay = new Program();
-            List<Products> productsList = prodDisplay.ReadProducts();
+
+            List<Products> productsList = ProdInfoReader.ReadProducts();
 
             for (int y = 0; y < productsList.Count; y++)
             {
-                //Console.SetCursorPosition(30, y);
                 Console.WriteLine(productsList[y]);
             }
 
