@@ -10,6 +10,7 @@ namespace _02CSharpInlämningsuppgift.NewCutomer
         public static void Kassa()
         {
             List<Products> productsList = ProdInfoReader.ReadProducts();
+            CustormerShopping cart = new CustormerShopping();
 
             while (true)
             {
@@ -18,11 +19,11 @@ namespace _02CSharpInlämningsuppgift.NewCutomer
 
                 DateTime currentDateTime = DateTime.Now;
                 Console.ForegroundColor = ConsoleColor.Green;
-                Console.WriteLine($"KASSA");
+                Console.WriteLine($"WELCOME");
                 Console.ResetColor();
                 // space between the two sides
                 int horizantal = 30;
-                int totalSum = 10;
+                decimal total = 0;
 
                 for (int y = 0; y < productsList.Count; y++)
                 {
@@ -32,34 +33,33 @@ namespace _02CSharpInlämningsuppgift.NewCutomer
 
                 Console.SetCursorPosition(0, 1);
                 Console.BackgroundColor = ConsoleColor.Red;
-                Console.WriteLine("KVITTO   " + currentDateTime + $"\nTOTAL: {totalSum}");
+                Console.WriteLine("RECEIPT   " + currentDateTime);
+                List<Receipt> receipts = cart.GetReceipts();
+                foreach (Receipt receipt in receipts)
+                {
+                    Console.WriteLine($"{receipt.ProdName} {receipt.Amount} * {receipt.ProdPrice} = {receipt.Amount * receipt.ProdPrice}");
+                    total += receipt.TotalSum;
+                }
+                Console.WriteLine($"TOTAL: {total}");
+
                 Console.ResetColor();
-                Console.Write("Kommandon: \n<ProdID> <Amount>\n<Pay>\n");
-                Console.Write("Kommando: ");
+                Console.Write("Commands: \n<ProdID> <Amount>\n<Pay>\n");
+                Console.Write("Commands: ");
                 string userInput = Console.ReadLine().ToLower();
 
                 if (userInput == "pay")
                 {
-                    
+
                     Console.WriteLine("thank come again!");
+                    break;
                 }
                 else
                 {
-                (int prodId, int amount) = InputSeparator.GetIdAmount(userInput);
-                (string prodName, decimal prodPrice) = ProductLookup.GetProdInfo(prodId);
+                    cart.AddShooping(userInput);
+
                 }
-
-
-
-
-
-                Console.ReadKey();
             }
 
-
-
         }
-
-
     }
 }

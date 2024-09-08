@@ -8,7 +8,7 @@ namespace _02CSharpInlämningsuppgift
 {
     public class ProdInfoReader
     {
-        // Read and store procuts to Products class
+        // Read and store procuts to Products class and return products list
         public static List<Products> ReadProducts()
         {
             List<Products> products = new List<Products>();
