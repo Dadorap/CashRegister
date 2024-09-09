@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,17 +10,31 @@ namespace _02CSharpInlämningsuppgift.NewCutomer
     public class CustormerShopping
     {
         private List<Receipt> prodRec = new List<Receipt>();
-        public void AddShooping(string userInput)
+
+        public void Addshopping(string userInput)
         {
-            (string prodName, decimal prodPrice, int prodId, int amount) = GetProdInfo.getProdInfo(userInput);
+            List<Products> productsList = ProdInfoReader.ReadProducts();
+            string[] userInputParts = userInput.Split(" ");
 
-            string productName = prodName;
-            int prodAmount = amount;
-            decimal price = prodPrice;
-            decimal total = amount * prodPrice;
+            int prodId = int.Parse(userInputParts[0]);
+            int prodAmount = int.Parse(userInputParts[1]);
 
-            Receipt receipt = new Receipt(productName, prodAmount, price, total);
-            prodRec.Add(receipt);
+            bool prodFound = false;
+            for (int i = 0; i < productsList.Count; i++)
+            {
+                if (productsList[i].Id == prodId)
+                {
+                    decimal total = prodAmount * productsList[i].Price;
+                    Receipt receipt = new Receipt(productsList[i].Name, prodAmount, productsList[i].Price, total);
+                    prodRec.Add(receipt);
+                    prodFound = true;
+                }
+            }
+
+            if (!prodFound)
+            {
+                throw new Exception("product not found");
+            }
 
         }
 

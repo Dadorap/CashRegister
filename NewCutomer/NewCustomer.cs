@@ -55,7 +55,7 @@ namespace _02CSharpInlämningsuppgift.NewCutomer
                 }
                 else
                 {
-                    cart.AddShooping(userInput);
+                    cart.Addshopping(userInput);
 
                 }
             }
