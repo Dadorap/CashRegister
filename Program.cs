@@ -1,8 +1,9 @@
 ﻿using System;
+using _02CSharpInlämningsuppgift.Product;
 
 namespace _02CSharpInlämningsuppgift
 {
-    internal class Program 
+    public class Program 
     {
 
 

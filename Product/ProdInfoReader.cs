@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.IO;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace _02CSharpInlämningsuppgift
+namespace _02CSharpInlämningsuppgift.Product
 {
     public class ProdInfoReader
     {

@@ -1,16 +1,14 @@
-﻿using System;
+﻿using _02CSharpInlämningsuppgift.Product;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace _02CSharpInlämningsuppgift
+namespace _02CSharpInlämningsuppgift.AdminFolder
 {
-    public class Admin 
+    public class Admin
     {
-
-
-
         public static void Test()
         {
             Console.Clear();
@@ -29,6 +27,5 @@ namespace _02CSharpInlämningsuppgift
 
             Console.ReadKey();
         }
-
     }
 }

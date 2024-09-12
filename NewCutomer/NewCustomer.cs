@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using _02CSharpInlämningsuppgift.Product;
 
 namespace _02CSharpInlämningsuppgift.NewCutomer
 {
@@ -50,8 +51,11 @@ namespace _02CSharpInlämningsuppgift.NewCutomer
                 if (userInput == "pay")
                 {
 
-                    Console.WriteLine("thank come again!");
-                    break;
+                    Console.WriteLine("Thank you come again!");
+                    Console.WriteLine("press any key to return to the menue...");
+                    Console.ReadKey();
+                    Menu.menu();
+
                 }
                 else
                 {
