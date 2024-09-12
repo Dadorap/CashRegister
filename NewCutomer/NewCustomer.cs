@@ -55,6 +55,8 @@ namespace _02CSharpInlämningsuppgift.NewCutomer
                     Console.WriteLine("press any key to return to the menue...");
                     Console.ReadKey();
                     Menu.menu();
+                    break;
+
 
                 }
                 else
