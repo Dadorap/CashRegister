@@ -60,7 +60,7 @@ namespace _02CSharpInlämningsuppgift
                             NewCustomer.Kassa();
                             return;
                         case 1:
-                            Admin.Test();
+                            Admin.AdminMenue();
                             break;
                         case 2:
                             Exit.Close();

@@ -4,3 +4,5 @@
 303 Paprika 49,50 kg
 304 Sallad 15,50 kg
 305 Gurka 18,50 pc
+310 korv 15 pc
+500 kött 79 kg
