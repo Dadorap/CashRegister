@@ -26,6 +26,7 @@ namespace _02CSharpInlämningsuppgift.NewCutomer
                 int horizantal = 30;
                 decimal total = 0;
 
+                // this shows product name and its ID on the right side of the console
                 for (int y = 0; y < productsList.Count; y++)
                 {
                     Console.SetCursorPosition(horizantal, y);

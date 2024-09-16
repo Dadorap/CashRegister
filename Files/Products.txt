@@ -6,3 +6,4 @@
 305 Gurka 18,50 pc
 310 korv 15 pc
 500 kött 79 kg
+320 kyckling 85 kg
