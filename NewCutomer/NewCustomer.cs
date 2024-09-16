@@ -56,8 +56,6 @@ namespace _02CSharpInlämningsuppgift.NewCutomer
                     Console.ReadKey();
                     Menu.menu();
                     break;
-
-
                 }
                 else
                 {

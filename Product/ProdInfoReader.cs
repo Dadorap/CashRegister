@@ -13,7 +13,7 @@ namespace _02CSharpInlämningsuppgift.Product
         public static List<Products> ReadProducts()
         {
             List<Products> products = new List<Products>();
-            string filePath = "D:\\02CSharpInl-mningsuppgift\\Files\\Producs.txt";
+            string filePath = "../../../Files/Products.txt";
 
 
             foreach (string line in File.ReadLines(filePath))

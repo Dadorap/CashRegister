@@ -15,17 +15,19 @@ namespace _02CSharpInlämningsuppgift.AdminFolder
             Console.WriteLine("You are in Admin class");
 
 
+            AdminMenue.AdminMenueList();
 
-            List<Products> productsList = ProdInfoReader.ReadProducts();
-
-            for (int y = 0; y < productsList.Count; y++)
-            {
-                Console.WriteLine(productsList[y]);
-            }
-
-            Console.WriteLine("hello");
 
             Console.ReadKey();
         }
     }
 }
+
+            //List<Products> productsList = ProdInfoReader.ReadProducts();
+
+            //for (int y = 0; y < productsList.Count; y++)
+            //{
+            //    Console.WriteLine(productsList[y]);
+            //}
+
+            //Console.WriteLine("hello");
