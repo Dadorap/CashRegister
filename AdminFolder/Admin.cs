@@ -11,6 +11,7 @@ namespace _02CSharpInlämningsuppgift.AdminFolder
     {
         public static void AdminMenue()
         {
+
             Console.Clear();
             Console.Write("Hello, choose a number from list below to start: ");
             int input = int.Parse(Console.ReadLine());
