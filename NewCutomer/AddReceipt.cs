@@ -12,15 +12,15 @@ namespace _02CSharpInlämningsuppgift.NewCutomer
         {
             var date = DateTime.Now.ToShortDateString().Split("-");
             var joinDate = string.Join("", date[0], date[1], date[2]);
-            
 
+            string x = $"\t\tKVITTO \n";
          
 
             foreach (Receipt receipts in receipt)
             {
-                using (StreamWriter myStream = new StreamWriter($"../../../Receipts/RECEIPT_{joinDate}.txt", append: true)){
+                using (StreamWriter myStream = new StreamWriter($"../../../Files/Receipts/RECEIPT_{joinDate}.txt", append: true)){
 
-                myStream.WriteLine($"{receipts.ProdName} {receipts.Amount} * {receipts.ProdPrice} = {receipts.Amount * receipts.ProdPrice}");
+                myStream.WriteLine($"{x} {receipts.ProdName} {receipts.Amount} * {receipts.ProdPrice} = {receipts.Amount * receipts.ProdPrice}");
                 }
                 
             }

@@ -10,7 +10,7 @@ namespace _02CSharpInlämningsuppgift
     {
         public static void menu()
         {
-            string[] list = { "New Customer", "Admin", "Exit" };
+            string[] list = { "New Customer", "Admin Tools", "Exit" };
             int currentSelect = 0;
 
 

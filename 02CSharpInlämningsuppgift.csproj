@@ -10,7 +10,7 @@
 
   <ItemGroup>
     <Folder Include="Interface\" />
-    <Folder Include="Receipts\" />
+    <Folder Include="Files\Receipts\" />
   </ItemGroup>
 
 </Project>
