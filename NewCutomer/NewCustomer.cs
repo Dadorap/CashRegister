@@ -51,12 +51,12 @@ namespace _02CSharpInlämningsuppgift.NewCutomer
 
                 if (userInput == "pay")
                 {
-
-                    Console.WriteLine("Thank you come again!");
-                    Console.WriteLine("press any key to return to the menue...");
-                    Console.ReadKey();
-                    Menu.menu();
-                    break;
+                    AddReceipt.AddReceipts();
+                    //Console.WriteLine("Thank you come again!");
+                    //Console.WriteLine("press any key to return to the menue...");
+                    //Console.ReadKey();
+                    //Menu.menu();
+                    //break;
                 }
                 else
                 {
