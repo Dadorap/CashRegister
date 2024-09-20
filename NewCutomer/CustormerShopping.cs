@@ -32,10 +32,7 @@ namespace _02CSharpInlämningsuppgift.NewCutomer
                 }
             }
 
-            if (!prodFound)
-            {
-                throw new Exception("product not found");
-            }
+
 
         }
 

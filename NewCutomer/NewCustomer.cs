@@ -15,6 +15,10 @@ namespace _02CSharpInlämningsuppgift.NewCutomer
 
             while (true)
             {
+                try
+                {
+
+                
 
                 Console.Clear();
 
@@ -62,6 +66,12 @@ namespace _02CSharpInlämningsuppgift.NewCutomer
                 {
                     cart.Addshopping(userInput);
 
+                }
+                }
+                catch (Exception ex)
+                {
+
+                    Console.WriteLine(ex.Message);
                 }
             }
 
