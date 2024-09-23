@@ -50,13 +50,13 @@ namespace _02CSharpInlämningsuppgift.NewCutomer
             string line = $"__________________________";
             string header = $"\n\t\tMAXEISAND\n\tTel: 0611-525252\n\t\tHÄRNÖSAND\n-------------------------\n";
             string footer = $"-------------------------\nTOTAL:\t\t\t\t{total}\nORDER NUMBER:\t\t{orderNumber}\n{receiptDate}\t\t\t{time}\n-------------------------\nTHANKS FOR THE VISIT\n\tWELCOME BACK";
-            // header
+            // Receipt Header
             using (StreamWriter myStream = new StreamWriter(receiptPath, append: true))
             {
                 myStream.WriteLine(line);
                 myStream.WriteLine($"{header}");
             }
-            // body
+            // Receipt Body
             foreach (Receipt receipts in receipt)
             {
                 using (StreamWriter myStream = new StreamWriter(receiptPath, append: true))
@@ -66,7 +66,7 @@ namespace _02CSharpInlämningsuppgift.NewCutomer
                 }
 
             }
-            // footer
+            // Receipt Footer
             using (StreamWriter myStream = new StreamWriter(receiptPath, append: true))
             {
                 myStream.WriteLine($"{footer}");
