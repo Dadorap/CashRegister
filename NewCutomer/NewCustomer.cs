@@ -34,7 +34,7 @@ namespace _02CSharpInlämningsuppgift.NewCutomer
                 for (int y = 0; y < productsList.Count; y++)
                 {
                     Console.SetCursorPosition(horizantal, y);
-                    Console.WriteLine($"{productsList[y].Name} -> ProdID: {productsList[y].Id}");
+                    Console.WriteLine($"{productsList[y].Name} -> ProdID: {productsList[y].PLU}");
                 }
 
                 Console.SetCursorPosition(0, 1);
@@ -43,7 +43,7 @@ namespace _02CSharpInlämningsuppgift.NewCutomer
                 List<Receipt> receipts = cart.GetReceipts();
                 foreach (Receipt receipt in receipts)
                 {
-                    Console.WriteLine($"{receipt.ProdName} {receipt.Amount} * {receipt.ProdPrice} = {receipt.Amount * receipt.ProdPrice}");
+                    Console.WriteLine($"{receipt.ProdName} {receipt.Amount}{receipt.PordType} * {receipt.ProdPrice} = {receipt.Amount * receipt.ProdPrice}");
                     total += receipt.TotalSum;
                 }
                 Console.WriteLine($"TOTAL: {total}");

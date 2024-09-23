@@ -20,15 +20,15 @@ namespace _02CSharpInlämningsuppgift.NewCutomer
             int prodId = int.Parse(userInputParts[0]);
             int prodAmount = int.Parse(userInputParts[1]);
 
-            bool prodFound = false;
+           
             for (int i = 0; i < productsList.Count; i++)
             {
-                if (productsList[i].Id == prodId)
+                if (productsList[i].PLU == prodId)
                 {
                     decimal total = prodAmount * productsList[i].Price;
-                    Receipt receipt = new Receipt(productsList[i].Name, prodAmount, productsList[i].Price, total);
+                    Receipt receipt = new Receipt(productsList[i].Name, prodAmount, productsList[i].Price, productsList[i].Type, total);
                     prodRec.Add(receipt);
-                    prodFound = true;
+                   
                 }
             }
 

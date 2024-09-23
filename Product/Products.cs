@@ -10,14 +10,14 @@ namespace _02CSharpInlämningsuppgift.Product
 {
     public class Products
     {
-        public int Id { get; set; }
+        public int PLU { get; set; }
         public string Name { get; set; }
         public decimal Price { get; set; }
         public string Type { get; set; }
 
-        public Products(int id, string name, decimal price, string type)
+        public Products(int plu, string name, decimal price, string type)
         {
-            Id = id;
+            PLU = plu;
             Name = name;
             Price = price;
             Type = type;
@@ -27,7 +27,7 @@ namespace _02CSharpInlämningsuppgift.Product
 
         public override string ToString()
         {
-            return $"{Id} - {Name} - {Price}/{Type}";
+            return $"{PLU} - {Name} - {Price}/{Type}";
         }
 
     }
