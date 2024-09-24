@@ -48,8 +48,8 @@ namespace _02CSharpInlämningsuppgift.NewCutomer
 
 
             string line = $"__________________________";
-            string header = $"\n\t\tMAXEISAND\n\tTel: 0611-525252\n\t\tHÄRNÖSAND\n-------------------------\n";
-            string footer = $"-------------------------\nTOTAL:\t\t\t\t{total}\nORDER NUMBER:\t\t{orderNumber}\n{receiptDate}\t\t\t{time}\n-------------------------\nTHANKS FOR THE VISIT\n\tWELCOME BACK";
+            string header = $"\n\tMAXEISAND\n     Tel:0611-525252\n\tHÄRNÖSAND\n-------------------------\nPRODUCTS\t PRICE\n";
+            string footer = $"-------------------------\nTOTAL:\t\t{total}\nORDER NUMBER:\t{orderNumber}\n{receiptDate}\t{time}\n-------------------------\n    THANKS FOR THE VISIT\n\tWELCOME BACK";
             // Receipt Header
             using (StreamWriter myStream = new StreamWriter(receiptPath, append: true))
             {
@@ -62,7 +62,7 @@ namespace _02CSharpInlämningsuppgift.NewCutomer
                 using (StreamWriter myStream = new StreamWriter(receiptPath, append: true))
                 {
 
-                    myStream.WriteLine($"{receipts.ProdName}\n\t{receipts.Amount}{receipts.PordType}*{receipts.ProdPrice}\t\t\t{receipts.Amount * receipts.ProdPrice}");
+                    myStream.WriteLine($"{receipts.ProdName}\n  {receipts.Amount}{receipts.PordType}*{receipts.ProdPrice}\t{receipts.Amount * receipts.ProdPrice}");
                 }
 
             }
@@ -72,6 +72,8 @@ namespace _02CSharpInlämningsuppgift.NewCutomer
                 myStream.WriteLine($"{footer}");
                 myStream.WriteLine(line);
             }
+
+            ReadReceipt.DisplayReceipt(receiptPath, orderNumber);
         }
     }
 }
