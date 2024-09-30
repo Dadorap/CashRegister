@@ -1,4 +1,5 @@
-﻿using _02CSharpInlämningsuppgift.Product;
+﻿using _02CSharpInlämningsuppgift.AdminFolder.Receipt;
+using _02CSharpInlämningsuppgift.Product;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -34,6 +35,12 @@ namespace _02CSharpInlämningsuppgift.AdminFolder
             {
                 case 1:
                     AddProduct.AddPorductToList();
+                    break; 
+                case 2:
+                    GetReceipt.GetReceiptById();
+                    break;                
+                case 3:
+                    DeleteProduct.DeleteProdcutFromList();
                     break;
                 default:
                     break;

@@ -17,9 +17,6 @@ namespace _02CSharpInlämningsuppgift.NewCutomer
             {
                 try
                 {
-
-                
-
                 Console.Clear();
 
                 DateTime currentDateTime = DateTime.Now;
