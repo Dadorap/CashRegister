@@ -13,21 +13,21 @@ namespace _02CSharpInlämningsuppgift.Product
         public int PLU { get; set; }
         public string Name { get; set; }
         public decimal Price { get; set; }
-        public string Type { get; set; }
+        public string UnitType { get; set; }
 
         public Products(int plu, string name, decimal price, string type)
         {
             PLU = plu;
             Name = name;
             Price = price;
-            Type = type;
+            UnitType = type;
         }
 
 
 
         public override string ToString()
         {
-            return $"{PLU} - {Name} - {Price}/{Type}";
+            return $"{PLU} - {Name} - {Price}/{UnitType}";
         }
 
     }

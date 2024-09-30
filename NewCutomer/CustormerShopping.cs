@@ -26,7 +26,7 @@ namespace _02CSharpInlämningsuppgift.NewCutomer
                 if (productsList[i].PLU == prodId)
                 {
                     decimal total = prodAmount * productsList[i].Price;
-                    Receipt receipt = new Receipt(productsList[i].Name, prodAmount, productsList[i].Price, productsList[i].Type, total);
+                    Receipt receipt = new Receipt(productsList[i].Name, prodAmount, productsList[i].Price, productsList[i].UnitType, total);
                     prodRec.Add(receipt);
                    
                 }

@@ -8,24 +8,20 @@ namespace _02CSharpInlämningsuppgift
 {
     public class Menu 
     {
-        public static void menu()
-        {
-            string[] list = { "New Customer", "Admin Tools", "Exit" };
+        public static void menu(List<string> menue, Action option1, Action option2, Action option3)
+        {           
             int currentSelect = 0;
-
-
-
 
             while (true)
             {
                 Console.Clear();
                 Console.Write("Choose something from below and press Enter key to start \n");
 
-                for (int i = 0; i < list.Length; i++)
+                for (int i = 0; i < menue.Count; i++)
                 {
                     if (i == currentSelect)
                     {
-                        if (currentSelect == 2)
+                        if (menue[i].ToLower() == "exit")
                         {
                             Console.ForegroundColor = ConsoleColor.Red;
                         }
@@ -33,11 +29,11 @@ namespace _02CSharpInlämningsuppgift
                         {
                             Console.ForegroundColor = ConsoleColor.Green;
                         }
-                        Console.WriteLine($"-> {list[i]}");
+                        Console.WriteLine($"-> {menue[i]}");
                     }
                     else
                     {
-                        Console.WriteLine($">>{list[i]}<<");
+                        Console.WriteLine($">>{menue[i]}<<");
                     }
                     Console.ResetColor();
                 }
@@ -46,28 +42,29 @@ namespace _02CSharpInlämningsuppgift
 
                 if (keyPressed == ConsoleKey.UpArrow)
                 {
-                    currentSelect = currentSelect > 0 ? currentSelect - 1 : list.Length - 1;
+                    currentSelect = currentSelect > 0 ? currentSelect - 1 : menue.Count - 1;
                 }
                 else if (keyPressed == ConsoleKey.DownArrow)
                 {
-                    currentSelect = (currentSelect < list.Length - 1) ? currentSelect + 1 : 0;
+                    currentSelect = (currentSelect < menue.Count - 1) ? currentSelect + 1 : 0;
                 }
                 else if (keyPressed == ConsoleKey.Enter)
                 {
                     switch (currentSelect)
                     {
                         case 0:
-                            NewCustomer.Kassa();
+                            option1();
                             return;
                         case 1:
-                            Admin.AdminMenue();
+                            option2();
                             break;
                         case 2:
-                            Exit.Close();
-                            return; 
+                            option3();
+                            return;
                     }
                 }
             }
         }
     }
 }
+

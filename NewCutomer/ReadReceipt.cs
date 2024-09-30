@@ -1,4 +1,5 @@
-﻿using System;
+﻿using _02CSharpInlämningsuppgift.AdminFolder;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -50,7 +51,8 @@ namespace _02CSharpInlämningsuppgift.NewCutomer
             Console.ResetColor();
             Console.Write("Press any key to return to menue...");
             Console.ReadKey();
-            Menu.menu();
+            List<string> menue = new List<string>() { "New Customer", "Admin Tools", "Exit" };
+            Menu.menu(menue, NewCustomer.Kassa, Admin.AdminMenue, Exit.Close);
         }
     }
 }
