@@ -1,4 +1,4 @@
-﻿using _02CSharpInlämningsuppgift.Product;
+﻿using CashRegister.Product;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
 
-namespace _02CSharpInlämningsuppgift.AdminFolder.EditProductFolder
+namespace CashRegister.AdminFolder.EditProductFolder
 {
     public class AddProduct
     {

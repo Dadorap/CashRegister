@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Security;
-using _02CSharpInlämningsuppgift.AdminFolder;
-using _02CSharpInlämningsuppgift.NewCutomer;
+using CashRegister.AdminFolder;
+using CashRegister.NewCutomer;
 
 
-namespace _02CSharpInlämningsuppgift
+namespace CashRegister
 {
     public class Menu 
     {

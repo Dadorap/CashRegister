@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
 
-namespace _02CSharpInlämningsuppgift.NewCutomer
+namespace CashRegister.NewCutomer
 {
     public class Receipt
     {

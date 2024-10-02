@@ -1,4 +1,4 @@
-﻿using _02CSharpInlämningsuppgift.Product;
+﻿using CashRegister.Product;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.IO;
 
-namespace _02CSharpInlämningsuppgift.AdminFolder.EditProductFolder
+namespace CashRegister.AdminFolder.EditProductFolder
 {
     public class DeleteProduct
     {
@@ -27,6 +27,8 @@ namespace _02CSharpInlämningsuppgift.AdminFolder.EditProductFolder
 
             Console.Write("Press any key to return...");
             Console.ReadKey();
+
+            
 
         }
 

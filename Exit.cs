@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 
-namespace _02CSharpInlämningsuppgift
+namespace CashRegister
 {
     class Exit
     {

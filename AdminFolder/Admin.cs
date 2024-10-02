@@ -1,13 +1,13 @@
-﻿using _02CSharpInlämningsuppgift.AdminFolder.EditProductFolder;
-using _02CSharpInlämningsuppgift.AdminFolder.Receipt;
-using _02CSharpInlämningsuppgift.Product;
+﻿using CashRegister.AdminFolder.EditProductFolder;
+using CashRegister.AdminFolder.Receipt;
+using CashRegister.Product;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace _02CSharpInlämningsuppgift.AdminFolder
+namespace CashRegister.AdminFolder
 {
     public class Admin
     {

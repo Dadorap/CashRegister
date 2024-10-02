@@ -1,9 +1,9 @@
 ﻿using System;
-using _02CSharpInlämningsuppgift.AdminFolder;
-using _02CSharpInlämningsuppgift.NewCutomer;
-using _02CSharpInlämningsuppgift.Product;
+using CashRegister.AdminFolder;
+using CashRegister.NewCutomer;
+using CashRegister.Product;
 
-namespace _02CSharpInlämningsuppgift
+namespace CashRegister
 {
     public class Program 
     {

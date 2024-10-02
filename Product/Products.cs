@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Channels;
 using System.Threading.Tasks;
 
-namespace _02CSharpInlämningsuppgift.Product
+namespace CashRegister.Product
 {
     public class Products
     {

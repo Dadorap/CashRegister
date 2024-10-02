@@ -1,11 +1,11 @@
-﻿using _02CSharpInlämningsuppgift.Product;
+﻿using CashRegister.Product;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace _02CSharpInlämningsuppgift.AdminFolder
+namespace CashRegister.AdminFolder
 {
     internal class DisplayProdList
     {

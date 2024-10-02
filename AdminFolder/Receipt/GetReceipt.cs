@@ -1,11 +1,11 @@
-﻿using _02CSharpInlämningsuppgift.NewCutomer;
+﻿using CashRegister.NewCutomer;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace _02CSharpInlämningsuppgift.AdminFolder.Receipt
+namespace CashRegister.AdminFolder.Receipt
 {
     public class GetReceipt
     {

@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using _02CSharpInlämningsuppgift.Product;
+using CashRegister.Product;
 
-namespace _02CSharpInlämningsuppgift.NewCutomer
+namespace CashRegister.NewCutomer
 {
     public class NewCustomer
     {
