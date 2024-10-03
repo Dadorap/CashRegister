@@ -22,7 +22,7 @@ namespace CashRegister.NewCutomer
 
                     DateTime currentDateTime = DateTime.Now;
                     Console.ForegroundColor = ConsoleColor.Green;
-                    Console.WriteLine($"WELCOME");
+                    Console.WriteLine($"Cash Register");
                     Console.ResetColor();
                     // space between the two sides
 
@@ -48,7 +48,7 @@ namespace CashRegister.NewCutomer
                     Console.Write("Commands: ");
                     string userInput = Console.ReadLine().ToLower();
 
-                    if (userInput == "pay")
+                    if (userInput == "pay" && receipts.Count > 0)
                     {
                         AddReceipt.AddReceipts(receipts, total);
                         //Console.WriteLine("Thank you come again!");

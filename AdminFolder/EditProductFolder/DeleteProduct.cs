@@ -18,6 +18,9 @@ namespace CashRegister.AdminFolder.EditProductFolder
             DisplayProductRight.DisplayProduct();
 
 
+            Console.SetCursorPosition(0, 0);
+            Console.ForegroundColor = ConsoleColor.Green;
+
             Console.Write("Enter PLU code: ");
             string pluCode = Console.ReadLine();
             string[] lines = File.ReadAllLines(path);
@@ -26,8 +29,9 @@ namespace CashRegister.AdminFolder.EditProductFolder
 
 
             Console.Clear();
-            Console.WriteLine("Product with PLU code " + pluCode + " has been removed or edited.");
-
+            Console.ForegroundColor = ConsoleColor.DarkRed;
+            Console.WriteLine("Product with PLU code " + pluCode + " has been removed.");
+            Console.ResetColor();
             Console.Write("Press any key to return...");
             Console.ReadKey();
 

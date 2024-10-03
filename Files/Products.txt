@@ -1,4 +1,4 @@
-300 Bannan 29,50 kg
+300 Banan 14,50 kg
 301 Tomater 33,50 kg
 302 Kiwi 39,50 kg
 303 Paprika 49,50 kg

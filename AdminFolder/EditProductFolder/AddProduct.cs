@@ -16,7 +16,7 @@ namespace CashRegister.AdminFolder.EditProductFolder
             Console.Clear();
             DisplayProductRight.DisplayProduct();
             string filePath = "../../../Files/Products.txt";
-
+            Console.ForegroundColor = ConsoleColor.Green;
 
             Console.SetCursorPosition(0,0);
             Console.Write("Enter the PLU code: ");
@@ -34,7 +34,7 @@ namespace CashRegister.AdminFolder.EditProductFolder
             {
                 mySteam.WriteLine(prodInfo);
             }
-
+            Console.ResetColor();
             Console.Write("Press any key to return...");
             Console.ReadKey();
 
