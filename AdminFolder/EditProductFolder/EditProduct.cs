@@ -1,4 +1,5 @@
 ﻿using CashRegister.AdminFolder.EditProductFolder;
+using CashRegister.Interface;
 using CashRegister.Product;
 using System;
 using System.Collections.Generic;
@@ -8,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace CashRegister.AdminFolder.EditProductFolder
 {
-    public class EditProduct
+    public class EditProduct 
     {
         public static void EditProducts()
         {

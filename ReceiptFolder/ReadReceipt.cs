@@ -1,11 +1,13 @@
-﻿using CashRegister.AdminFolder;
+﻿using CashRegister;
+using CashRegister.AdminFolder;
+using CashRegister.NewCutomer;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CashRegister.NewCutomer
+namespace CashRegister.ReceiptFolder
 {
     public class ReadReceipt
     {

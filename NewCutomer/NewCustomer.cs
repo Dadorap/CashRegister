@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using CashRegister.ReceiptFolder;
 using CashRegister.AdminFolder;
 using CashRegister.Product;
 
@@ -38,7 +39,7 @@ namespace CashRegister.NewCutomer
                     List<Receipt> receipts = cart.GetReceipts();
                     foreach (Receipt receipt in receipts)
                     {
-                        Console.WriteLine($"{receipt.ProdName} {receipt.Amount}{receipt.PordType} * {receipt.ProdPrice} = {receipt.Amount * receipt.ProdPrice}");
+                        Console.WriteLine($"{receipt.ProdName} {receipt.Amount}{receipt.UnitType} * {receipt.ProdPrice} = {receipt.Amount * receipt.ProdPrice}");
                         total += receipt.TotalSum;
                     }
                     Console.WriteLine($"TOTAL: {total}");

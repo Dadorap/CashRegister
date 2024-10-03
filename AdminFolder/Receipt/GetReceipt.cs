@@ -1,4 +1,4 @@
-﻿using CashRegister.NewCutomer;
+﻿using CashRegister.ReceiptFolder;
 using System;
 using System.Collections.Generic;
 using System.Linq;

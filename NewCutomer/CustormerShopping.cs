@@ -4,6 +4,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using CashRegister.ReceiptFolder;
 using CashRegister.Product;
 
 namespace CashRegister.NewCutomer
@@ -25,8 +26,8 @@ namespace CashRegister.NewCutomer
             {
                 if (productsList[i].PLU == prodId)
                 {
-                    decimal total = prodAmount * productsList[i].Price;
-                    Receipt receipt = new Receipt(productsList[i].Name, prodAmount, productsList[i].Price, productsList[i].UnitType, total);
+                    decimal total = prodAmount * productsList[i].ProdPrice;
+                    Receipt receipt = new Receipt(productsList[i].ProdName, prodAmount, productsList[i].ProdPrice, productsList[i].UnitType, total);
                     prodRec.Add(receipt);
                    
                 }

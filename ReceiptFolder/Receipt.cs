@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CashRegister.Interface;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
@@ -6,14 +7,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
 
-namespace CashRegister.NewCutomer
+namespace CashRegister.ReceiptFolder
 {
-    public class Receipt
+    public class Receipt : IProduct
     {
         public string ProdName { get; set; }
-        public int Amount { get; set; }
         public decimal ProdPrice { get; set; }
-        public string PordType { get; set; }
+        public string UnitType { get; set; }
+        public int Amount { get; set; }
         public decimal TotalSum { get; set; }
 
 
@@ -22,7 +23,7 @@ namespace CashRegister.NewCutomer
             ProdName = prodName;
             Amount = amount;
             ProdPrice = prodPrice;
-            PordType = prodType;
+            UnitType = prodType;
             TotalSum = totalSum;
         }
 

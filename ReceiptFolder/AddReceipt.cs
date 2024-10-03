@@ -5,7 +5,7 @@ using System.Reflection.PortableExecutable;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CashRegister.NewCutomer
+namespace CashRegister.ReceiptFolder
 {
     public class AddReceipt
     {
@@ -32,7 +32,7 @@ namespace CashRegister.NewCutomer
                     {
                         orderNum.Add(int.Parse(rLine));
                     }
-                   
+
                     // gets the last order number from the list and add 1 to it
                     orderNumber = orderNum[orderNum.Count - 1] + 1;
                 }
@@ -62,7 +62,7 @@ namespace CashRegister.NewCutomer
                 using (StreamWriter myStream = new StreamWriter(receiptPath, append: true))
                 {
 
-                    myStream.WriteLine($"{receipts.ProdName}\n  {receipts.Amount}{receipts.PordType}*{receipts.ProdPrice}\t{receipts.Amount * receipts.ProdPrice}");
+                    myStream.WriteLine($"{receipts.ProdName}\n  {receipts.Amount}{receipts.UnitType}*{receipts.ProdPrice}\t{receipts.Amount * receipts.ProdPrice}");
                 }
 
             }
