@@ -16,8 +16,11 @@ namespace CashRegister.AdminFolder
 
             foreach (Products product in productsList)
             {
+                Console.ForegroundColor = ConsoleColor.Cyan;
+
                 Console.WriteLine(product);
             }
+            Console.ResetColor();
             Console.Write("Press any key to return...");
             Console.ReadKey();
         }

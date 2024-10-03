@@ -14,9 +14,10 @@ namespace CashRegister.AdminFolder
             List<Products> productsList = ProdInfoReader.ReadProducts();
             List<string> list = new List<string>();
             string path = "../../../Files/Products.txt";
-            int horiz = 30;
+            int horiz = 35;
 
             Console.SetCursorPosition(horiz, 0);
+            Console.ForegroundColor = ConsoleColor.DarkBlue;
             Console.WriteLine("PLUs- Product - Price");
             // display list of all product
             foreach (string item in File.ReadAllLines(path))
@@ -26,9 +27,12 @@ namespace CashRegister.AdminFolder
 
             for (int i = 0; i < list.Count; i++)
             {
+            Console.ForegroundColor = ConsoleColor.Cyan;
                 Console.SetCursorPosition(horiz, i + 1);
                 Console.WriteLine(list[i]);
             }
+
+            Console.ResetColor();
         }
     }
 }

@@ -12,13 +12,14 @@ namespace CashRegister.Product
         // Read and store procuts to Products class and return products list
         public static List<Products> ReadProducts()
         {
+            Console.ForegroundColor = ConsoleColor.Cyan;
             List<Products> products = new List<Products>();
             string filePath = "../../../Files/Products.txt";
 
 
             foreach (string line in File.ReadLines(filePath))
             {
-                string[] parts = line.Split(' ');
+                string[] parts = line.Split(" ");
 
                 int id = int.Parse(parts[0]);
                 string name = parts[1];
@@ -28,7 +29,7 @@ namespace CashRegister.Product
                 Products product = new Products(id, name, price, type);
                 products.Add(product);
             }
-
+            Console.ResetColor();
             return products;
         }
 

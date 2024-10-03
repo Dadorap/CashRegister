@@ -27,7 +27,7 @@ namespace CashRegister.Product
 
         public override string ToString()
         {
-            return $"{PLU} - {Name} - {Price}/{UnitType}";
+            return $"{PLU} {Name} {Price} {UnitType}";
         }
 
     }

@@ -12,6 +12,7 @@ namespace CashRegister.AdminFolder.EditProductFolder
     {
         public static void DeleteProdcutFromList()
         {
+            Console.Clear();
             string path = "../../../Files/Products.txt";
             // displays product list to the right of console
             DisplayProductRight.DisplayProduct();
@@ -22,6 +23,8 @@ namespace CashRegister.AdminFolder.EditProductFolder
             string[] lines = File.ReadAllLines(path);
             var filteredLines = lines.Where(line => !line.Contains(pluCode)).ToArray();
             File.WriteAllLines(path, filteredLines);
+
+
             Console.Clear();
             Console.WriteLine("Product with PLU code " + pluCode + " has been removed or edited.");
 
