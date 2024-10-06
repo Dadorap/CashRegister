@@ -4,12 +4,12 @@ using CashRegister.AdminFolder;
 using CashRegister.NewCutomer;
 
 
-namespace CashRegister
+namespace _02CSharpInlämningsuppgift.MenuFolder
 {
-    public class Menu 
+    public class Menu
     {
         public static void menu(List<string> menue, Action option1, Action option2, Action option3)
-        {           
+        {
             int currentSelect = 0;
 
             while (true)
@@ -46,7 +46,7 @@ namespace CashRegister
                 }
                 else if (keyPressed == ConsoleKey.DownArrow)
                 {
-                    currentSelect = (currentSelect < menue.Count - 1) ? currentSelect + 1 : 0;
+                    currentSelect = currentSelect < menue.Count - 1 ? currentSelect + 1 : 0;
                 }
                 else if (keyPressed == ConsoleKey.Enter)
                 {

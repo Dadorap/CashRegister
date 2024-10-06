@@ -1,4 +1,6 @@
-﻿using CashRegister.AdminFolder.EditProductFolder;
+﻿using _02CSharpInlämningsuppgift.AdminFolder.PromotionalFolder;
+using _02CSharpInlämningsuppgift.MenuFolder;
+using CashRegister.AdminFolder.EditProductFolder;
 using CashRegister.AdminFolder.Receipt;
 using CashRegister.Product;
 using System;
@@ -17,14 +19,9 @@ namespace CashRegister.AdminFolder
             Console.Clear();
 
 
-            List<string> menueList = new List<string>() {"Add product", "Get Receipt", "Edit productList" };
+            List<string> menueList = new List<string>() { "Get Receipt","promotional prices", "Edit productList" };
 
-            Menu.menu(menueList, AddProduct.AddPorductToList, GetReceipt.GetReceiptById, EditProduct.EditProducts);
-
-
-
-
-
+            Menu.menu(menueList,  GetReceipt.GetReceiptById, Promotional.PromotionalMenue ,EditProduct.EditProducts);
 
             Console.ReadKey();
         }

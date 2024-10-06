@@ -1,4 +1,4 @@
-﻿using CashRegister;
+﻿using _02CSharpInlämningsuppgift.MenuFolder;
 using CashRegister.AdminFolder;
 using CashRegister.NewCutomer;
 using System;
@@ -53,8 +53,8 @@ namespace CashRegister.ReceiptFolder
             Console.ResetColor();
             Console.Write("Press any key to return to menue...");
             Console.ReadKey();
-            List<string> menue = new List<string>() { "New Customer", "Admin Tools", "Exit" };
-            Menu.menu(menue, NewCustomer.Kassa, Admin.AdminMenue, Exit.Close);
+            MainMenu.DisplayMenu();
+
         }
     }
 }

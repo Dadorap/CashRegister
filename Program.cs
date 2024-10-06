@@ -1,4 +1,5 @@
 ﻿using System;
+using _02CSharpInlämningsuppgift.MenuFolder;
 using CashRegister.AdminFolder;
 using CashRegister.NewCutomer;
 using CashRegister.Product;
@@ -12,8 +13,7 @@ namespace CashRegister
 
         static void Main(string[] args)
         {
-            List<string> menue = new List<string>() { "New Customer", "Admin Tools", "Exit" };
-            Menu.menu(menue, NewCustomer.Kassa, Admin.AdminMenue, Exit.Close);
+            MainMenu.DisplayMenu();
             ProdInfoReader.ReadProducts();
 
         }
