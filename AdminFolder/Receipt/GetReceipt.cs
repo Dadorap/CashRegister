@@ -21,21 +21,27 @@ namespace CashRegister.AdminFolder.Receipt
                     List<string> list = new List<string>();
 
                     Console.SetCursorPosition(horizantal, 0);
+                    Console.ForegroundColor = ConsoleColor.DarkBlue;
                     Console.WriteLine("ReceiptNumber - Date");
-                    // Read all order numbers from the file and add them to the list
+
                     foreach (var item in File.ReadAllLines(path))
                     {
                         list.Add(item);
                     }
-
-                    // Display the order numbers on the console
                     for (int i = 0; i < list.Count; i++)
                     {
                         Console.SetCursorPosition(horizantal, i + 1);
-                        Console.WriteLine(list[i]);
+                        if (i % 2 == 0)
+                        {
+                            Console.ForegroundColor = ConsoleColor.Cyan;
+                        }
+                        else
+                        {
+                            Console.ForegroundColor = ConsoleColor.DarkCyan;
+                        }
+                            Console.WriteLine(list[i]);
                     }
-
-                    // Ask for the receipt number
+                    Console.ResetColor();
                     Console.SetCursorPosition(0, 0);
                     Console.Write("Enter receipt number (4 digits): ");
 
@@ -43,13 +49,11 @@ namespace CashRegister.AdminFolder.Receipt
                     {
                         bool validDate = true;
 
-                        // Loop for entering the date until it's valid
                         while (validDate)
                         {
                             Console.WriteLine("Enter date as so YYYYMMDD: ");
 
 
-                            // Ensure the date is in the correct format (8 digits)
                             if (int.TryParse(Console.ReadLine(), out int receiptDate) && Math.Abs(receiptDate).ToString().Length == 8)
                             {
                                 string receiptPath = $"../../../Files/Receipts/RECEIPT_{receiptDate}.txt";
