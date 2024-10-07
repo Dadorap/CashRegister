@@ -6,90 +6,16 @@ __________________________
 -------------------------
 PRODUCTS	 PRICE
 
-Banan
-  2kg*14,50	29,00
--------------------------
-TOTAL:		29,00
-ORDER NUMBER:	4046
-2024/10/07	10:32
--------------------------
-    THANKS FOR THE VISIT
-	WELCOME BACK
-__________________________
-__________________________
-
-	MAXEISAND
-     Tel:0611-525252
-	HÄRNÖSAND
--------------------------
-PRODUCTS	 PRICE
-
-kött
-  2kg*79	158
-Sallad
-  5kg*15,50	77,50
--------------------------
-TOTAL:		235,50
-ORDER NUMBER:	4001
-2024/10/07	10:33
--------------------------
-    THANKS FOR THE VISIT
-	WELCOME BACK
-__________________________
-__________________________
-
-	MAXEISAND
-     Tel:0611-525252
-	HÄRNÖSAND
--------------------------
-PRODUCTS	 PRICE
-
-Banan
-  2kg*14,50	29,00
--------------------------
-TOTAL:		29,00
-ORDER NUMBER:	4001
-2024/10/07	10:55
--------------------------
-    THANKS FOR THE VISIT
-	WELCOME BACK
-__________________________
-__________________________
-
-	MAXEISAND
-     Tel:0611-525252
-	HÄRNÖSAND
--------------------------
-PRODUCTS	 PRICE
-
-Banan
-  2kg*14,50	29,00
-kött
-  5kg*79	395
--------------------------
-TOTAL:		424,00
-ORDER NUMBER:	4000
-2024/10/07	11:02
--------------------------
-    THANKS FOR THE VISIT
-	WELCOME BACK
-__________________________
-__________________________
-
-	MAXEISAND
-     Tel:0611-525252
-	HÄRNÖSAND
--------------------------
-PRODUCTS	 PRICE
-
  Banan
-  2kg*14,50	29,00
+  2kg*10,15	20,30
  kött
   2kg*79	158
+ korv
+  2pc*15	30
  -------------------------
-TOTAL:		187,00
-ORDER NUMBER:	4001
-2024/10/07	11:03
+TOTAL:		208,30
+ORDER NUMBER:	4000
+2024/10/07	15:51
 -------------------------
     THANKS FOR THE VISIT
 	WELCOME BACK
@@ -103,11 +29,11 @@ __________________________
 PRODUCTS	 PRICE
 
  Banan
-  2kg*14,50	29,00
+  2kg*10,15	20,30
  -------------------------
-TOTAL:		29,00
-ORDER NUMBER:	4000
-2024/10/07	11:04
+TOTAL:		20,30
+ORDER NUMBER:	4001
+2024/10/07	15:51
 -------------------------
     THANKS FOR THE VISIT
 	WELCOME BACK
@@ -122,46 +48,16 @@ PRODUCTS	 PRICE
 
  kött
   2kg*79	158
- -------------------------
-TOTAL:		158
-ORDER NUMBER:	4001
-2024/10/07	11:05
--------------------------
-    THANKS FOR THE VISIT
-	WELCOME BACK
-__________________________
-__________________________
-
-	MAXEISAND
-     Tel:0611-525252
-	HÄRNÖSAND
--------------------------
-PRODUCTS	 PRICE
-
+ korv
+  5pc*15	75
  Banan
-  2kg*14,50	29,00
+  10kg*10,15	101,50
+ kyckling
+  2kg*85	170
  -------------------------
-TOTAL:		29,00
+TOTAL:		504,50
 ORDER NUMBER:	4002
-2024/10/07	11:10
--------------------------
-    THANKS FOR THE VISIT
-	WELCOME BACK
-__________________________
-__________________________
-
-	MAXEISAND
-     Tel:0611-525252
-	HÄRNÖSAND
--------------------------
-PRODUCTS	 PRICE
-
- Banan
-  2kg*14,50	29,00
- -------------------------
-TOTAL:		29,00
-ORDER NUMBER:	4003
-2024/10/07	12:40
+2024/10/07	15:51
 -------------------------
     THANKS FOR THE VISIT
 	WELCOME BACK

@@ -12,6 +12,7 @@ namespace CashRegister.ReceiptFolder
         public static void AddReceipts(List<Receipt> receipt, decimal total)
         {
             int orderNumber = 4000;
+            
             var receiptDate = DateTime.Now.ToShortDateString().Replace("-", "/");
             var time = DateTime.Now.ToString("HH:mm");
             var date = DateTime.Now.ToShortDateString().Split("-");
@@ -33,9 +34,10 @@ namespace CashRegister.ReceiptFolder
 
                     while ((rLine = readStream.ReadLine()) != null)
                     {
+                        string[] parts = rLine.Split(" ");
                         if (!string.IsNullOrWhiteSpace(rLine))
                         {
-                            orderNum.Add(int.Parse(rLine));
+                            orderNum.Add(int.Parse(parts[0]));
                         }
                     }
 
@@ -50,7 +52,7 @@ namespace CashRegister.ReceiptFolder
             // writes order numer to text file OrderNumber
             using (StreamWriter sw = new StreamWriter(orderPath, append: true))
             {
-                sw.WriteLine(orderNumber);
+                sw.WriteLine($"{orderNumber} {receiptDate}");
             }
 
 

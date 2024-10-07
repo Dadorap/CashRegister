@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using CashRegister.ReceiptFolder;
 using CashRegister.Product;
+using CashRegister.CampaignFolder;
 
 namespace CashRegister.NewCutomer
 {
@@ -16,20 +17,28 @@ namespace CashRegister.NewCutomer
         public void Addshopping(string userInput)
         {
             List<Products> productsList = ProdInfoReader.ReadProducts();
+            string campPath = "../../../Files/Campaign.txt";
             string[] userInputParts = userInput.Split(" ");
+
 
             int prodId = int.Parse(userInputParts[0]);
             int prodAmount = int.Parse(userInputParts[1]);
 
-           
+
+            // gets the discount amount in Percent
+            decimal priceDiscount = CampaignChecker.GetPrice(prodId);
+
+
+
             for (int i = 0; i < productsList.Count; i++)
             {
                 if (productsList[i].PLU == prodId)
                 {
-                    decimal total = prodAmount * productsList[i].ProdPrice;
-                    Receipt receipt = new Receipt(productsList[i].ProdName, prodAmount, productsList[i].ProdPrice, productsList[i].UnitType, total);
+                    decimal price = productsList[i].ProdPrice * priceDiscount;
+                    decimal total =Math.Round(prodAmount * price, 2);
+                    Receipt receipt = new Receipt(productsList[i].ProdName, prodAmount, Math.Round(price,2), productsList[i].UnitType, total);
                     prodRec.Add(receipt);
-                   
+
                 }
             }
 

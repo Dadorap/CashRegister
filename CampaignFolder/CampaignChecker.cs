@@ -8,9 +8,25 @@ namespace CashRegister.CampaignFolder
 {
     public class CampaignChecker
     {
-        //public static decimal GetPrice(int plu)
-        //{
+        public static decimal GetPrice(int plu)
+        {
+            var campList = GetCampaign.GetCamp();
+            var date = DateOnly.Parse(DateTime.Now.ToString("yyyy-MM-dd"));
 
-        //}
+            foreach (var camp in campList)
+            {
+                if (plu == camp.ProdPLU)
+                {
+                    if (date >= camp.StartDate && date <= camp.EndDate)
+                    {
+                        decimal discount = 1 - (camp.Discount / 100m);
+                        return discount;
+                    }
+                }
+            }
+
+            return 1;
+        }
+
     }
 }
