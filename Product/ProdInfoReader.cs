@@ -16,22 +16,40 @@ namespace CashRegister.Product
             List<Products> products = new List<Products>();
             string filePath = "../../../Files/Products.txt";
 
-
             foreach (string line in File.ReadLines(filePath))
             {
+                // Split the line by spaces
                 string[] parts = line.Split(" ");
 
-                int id = int.Parse(parts[0]);
-                string name = parts[1];
-                decimal price = decimal.Parse(parts[2]);
-                string type = parts[3];
+                // Check if we have the expected number of parts (4 in this case: id, name, price, type)
+                if (parts.Length == 4)
+                {
+                    // Try to parse the id
+                    if (int.TryParse(parts[0], out int id) &&
+                        decimal.TryParse(parts[2], out decimal price)) // Parse price
+                    {
+                        string name = parts[1];
+                        string type = parts[3];
 
-                Products product = new Products(id, name, price, type);
-                products.Add(product);
+                        // Create the product and add it to the list
+                        Products product = new Products(id, name, price, type);
+                        products.Add(product);
+                    }
+                    else
+                    {
+                        Console.WriteLine($"Error parsing line: {line}");
+                    }
+                }
+                else
+                {
+                    Console.WriteLine($"Invalid format in line: {line}");
+                }
             }
+
             Console.ResetColor();
             return products;
         }
+
 
     }
 }

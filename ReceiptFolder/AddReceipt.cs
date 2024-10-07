@@ -21,6 +21,8 @@ namespace CashRegister.ReceiptFolder
             string receiptPath = $"../../../Files/Receipts/RECEIPT_{joinDate}.txt";
             string orderPath = "../../../Files/OrderNumber.txt";
 
+
+
             // checks if the file exist if so read the file
             if (File.Exists(orderPath))
             {
@@ -28,13 +30,20 @@ namespace CashRegister.ReceiptFolder
                 {
                     string rLine;
                     List<int> orderNum = new List<int>();
+
                     while ((rLine = readStream.ReadLine()) != null)
                     {
-                        orderNum.Add(int.Parse(rLine));
+                        if (!string.IsNullOrWhiteSpace(rLine))
+                        {
+                            orderNum.Add(int.Parse(rLine));
+                        }
                     }
 
-                    // gets the last order number from the list and add 1 to it
-                    orderNumber = orderNum[orderNum.Count - 1] + 1;
+                    // if orderNum has entries, get the last order number and add 1 to it
+                    if (orderNum.Count > 0)
+                    {
+                        orderNumber = orderNum[orderNum.Count - 1] + 1;
+                    }
                 }
             }
 
@@ -62,14 +71,14 @@ namespace CashRegister.ReceiptFolder
                 using (StreamWriter myStream = new StreamWriter(receiptPath, append: true))
                 {
 
-                    myStream.WriteLine($"{receipts.ProdName}\n  {receipts.Amount}{receipts.UnitType}*{receipts.ProdPrice}\t{receipts.Amount * receipts.ProdPrice}");
+                    myStream.WriteLine($" {receipts.ProdName}\n  {receipts.Amount}{receipts.UnitType}*{receipts.ProdPrice}\t{receipts.Amount * receipts.ProdPrice}");
                 }
 
             }
             // Receipt Footer
             using (StreamWriter myStream = new StreamWriter(receiptPath, append: true))
             {
-                myStream.WriteLine($"{footer}");
+                myStream.WriteLine($" {footer}");
                 myStream.WriteLine(line);
             }
 
