@@ -1,5 +1,5 @@
-﻿using _02CSharpInlämningsuppgift.AdminFolder.PromotionalFolder;
-using _02CSharpInlämningsuppgift.MenuFolder;
+﻿using CashRegister.AdminFolder.PromotionalFolder;
+using CashRegister.MenuFolder;
 using CashRegister.AdminFolder.EditProductFolder;
 using CashRegister.AdminFolder.Receipt;
 using CashRegister.Product;

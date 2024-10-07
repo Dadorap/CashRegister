@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace _02CSharpInlämningsuppgift.AdminFolder.PromotionalFolder
+namespace CashRegister.AdminFolder.PromotionalFolder
 {
     public class RemoveCampaign
     {

@@ -5,9 +5,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using _02CSharpInlämningsuppgift.MenuFolder;
+using CashRegister.MenuFolder;
 
-namespace _02CSharpInlämningsuppgift.AdminFolder.PromotionalFolder
+namespace CashRegister.AdminFolder.PromotionalFolder
 {
     public class Promotional
     {

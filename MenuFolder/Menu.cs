@@ -4,7 +4,7 @@ using CashRegister.AdminFolder;
 using CashRegister.NewCutomer;
 
 
-namespace _02CSharpInlämningsuppgift.MenuFolder
+namespace CashRegister.MenuFolder
 {
     public class Menu
     {

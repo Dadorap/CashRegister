@@ -1,4 +1,4 @@
-﻿using _02CSharpInlämningsuppgift.MenuFolder;
+﻿using CashRegister.MenuFolder;
 using CashRegister.AdminFolder;
 using CashRegister.NewCutomer;
 using System;

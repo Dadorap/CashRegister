@@ -39,7 +39,7 @@ namespace CashRegister.ReceiptFolder
                         }
                     }
 
-                    // if orderNum has entries, get the last order number and add 1 to it
+                    
                     if (orderNum.Count > 0)
                     {
                         orderNumber = orderNum[orderNum.Count - 1] + 1;
