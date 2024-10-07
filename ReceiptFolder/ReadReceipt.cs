@@ -46,6 +46,12 @@ namespace CashRegister.ReceiptFolder
                     }
                 }
             }
+            catch (FileNotFoundException)
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("Could not find file");
+                Console.ResetColor();
+            }
             catch (Exception ex)
             {
                 Console.WriteLine("An error occurred: " + ex.Message);

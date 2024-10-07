@@ -4,6 +4,7 @@ using System.IO;
 using CashRegister.ReceiptFolder;
 using CashRegister.AdminFolder;
 using CashRegister.Product;
+using CashRegister.MenuFolder;
 
 namespace CashRegister.NewCutomer
 {
@@ -45,7 +46,7 @@ namespace CashRegister.NewCutomer
                     Console.WriteLine($"TOTAL: {total}");
 
                     Console.ResetColor();
-                    Console.Write("Commands: \n<ProdID> <Amount>\n<Pay>\n");
+                    Console.Write("Commands: \n<ProdID> <Amount>\n<Pay> <Return>\n");
                     Console.Write("Commands: ");
                     string userInput = Console.ReadLine().ToLower();
 
@@ -57,6 +58,9 @@ namespace CashRegister.NewCutomer
                         //Console.ReadKey();
                         //Menu.menu();
                         break;
+                    }else if (userInput == "return" && receipts.Count < 0)
+                    {
+                        MainMenu.DisplayMenu();
                     }
                     else
                     {
