@@ -4,6 +4,8 @@ using CashRegister.AdminFolder;
 using CashRegister.NewCutomer;
 using CashRegister.Product;
 using CashRegister.CampaignFolder;
+using CashRegister.AdminFolder.Display;
+using CashRegister.AdminFolder.PromotionalFolder;
 
 
 namespace CashRegister

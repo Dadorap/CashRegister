@@ -12,13 +12,15 @@ namespace CashRegister.CampaignFolder
         public decimal Discount { get; set; }
         public DateOnly StartDate { get; set; }
         public DateOnly EndDate { get; set; }
+        public int CampID { get; set; }
 
-        public Campaign(int _prodPLU, decimal _discount, DateOnly _startDate, DateOnly _endDate)
+        public Campaign(int _prodPLU, decimal _discount, DateOnly _startDate, DateOnly _endDate, int _campId)
         {
             ProdPLU = _prodPLU;
             Discount = _discount;
             StartDate = _startDate;
             EndDate = _endDate;
+            CampID = _campId;
         }
 
     }

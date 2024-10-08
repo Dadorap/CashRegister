@@ -1,4 +1,5 @@
-﻿using CashRegister.ReceiptFolder;
+﻿using CashRegister.ErrorMesg;
+using CashRegister.ReceiptFolder;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,6 +12,7 @@ namespace CashRegister.AdminFolder.Receipt
     {
         public static void GetReceiptById()
         {
+            ErrorMsg recErr = new ErrorMsg("Invalid receipt number. Please enter a 4-digit number.");
             while (true)
             {
                 Console.Clear();
@@ -71,12 +73,7 @@ namespace CashRegister.AdminFolder.Receipt
                     }
                     else
                     {
-                        Console.Clear();
-                        Console.ForegroundColor = ConsoleColor.Red;
-                        Console.WriteLine("Invalid receipt number. Please enter a 4-digit number.");
-                        Console.ResetColor();
-                        Console.Write("Enter any key to return...");
-                        Console.ReadKey();
+                        recErr.ErrorMessage();
                     }
                 }
                 catch (Exception ex)

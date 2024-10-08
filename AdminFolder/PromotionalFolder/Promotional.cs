@@ -19,7 +19,9 @@ namespace CashRegister.AdminFolder.PromotionalFolder
 
             List<string> menueList = new List<string>() { "Add campaign", "Remove campaign", "Return to main menu" };
 
-            Menu.menu(menueList, AddProduct.AddPorductToList, GetReceipt.GetReceiptById, MainMenu.DisplayMenu);
+            AddCampaign addCampaign = new AddCampaign();
+
+            Menu.menu(menueList, addCampaign.CreateCampaign, GetReceipt.GetReceiptById, MainMenu.DisplayMenu);
 
             Console.ReadKey();
         }

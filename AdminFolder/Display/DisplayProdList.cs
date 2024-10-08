@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CashRegister.AdminFolder
+namespace CashRegister.AdminFolder.Display
 {
     internal class DisplayProdList
     {

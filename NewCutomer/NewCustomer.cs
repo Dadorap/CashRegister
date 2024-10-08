@@ -2,9 +2,10 @@
 using System.Collections.Generic;
 using System.IO;
 using CashRegister.ReceiptFolder;
-using CashRegister.AdminFolder;
 using CashRegister.Product;
 using CashRegister.MenuFolder;
+using CashRegister.AdminFolder.Display;
+using CashRegister.AdminFolder;
 
 namespace CashRegister.NewCutomer
 {

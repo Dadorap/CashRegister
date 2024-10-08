@@ -1,5 +1,7 @@
-﻿using CashRegister.AdminFolder.EditProductFolder;
+﻿using CashRegister.AdminFolder.Display;
+using CashRegister.AdminFolder.EditProductFolder;
 using CashRegister.Interface;
+using CashRegister.MenuFolder;
 using CashRegister.Product;
 using System;
 using System.Collections.Generic;
@@ -15,7 +17,7 @@ namespace CashRegister.AdminFolder.EditProductFolder
         {
             Console.Clear();
             // menue list
-            List<string> menueList = new List<string>() { "Add Product", "Display productList", "Change productName", "Change productPrice", "Remove product" };
+            List<string> menueList = new List<string>() { "Add Product", "Remove product", "Display productList", "Change productName", "Change productPrice", "Return to main menu" };
 
             for (int i = 0; i < menueList.Count; i++)
             {
@@ -35,7 +37,7 @@ namespace CashRegister.AdminFolder.EditProductFolder
                     string choice = Console.ReadLine();
                    
                     Console.ResetColor();
-                    if (int.TryParse(choice,out int result) && result > 0 && result < 6) 
+                    if (int.TryParse(choice,out int result) && result > 0 && result <= 6) 
                     {
                         switch (result)
                         {
@@ -53,6 +55,9 @@ namespace CashRegister.AdminFolder.EditProductFolder
                                 break;
                             case 5:
                                 DeleteProduct.DeleteProdcutFromList();
+                                break;                            
+                            case 6:
+                                MainMenu.DisplayMenu();
                                 break;
                             default:
                                 break;

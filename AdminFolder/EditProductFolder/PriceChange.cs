@@ -1,4 +1,5 @@
-﻿using CashRegister.Product;
+﻿using CashRegister.AdminFolder.Display;
+using CashRegister.Product;
 using System;
 using System.Collections.Generic;
 using System.Linq;
