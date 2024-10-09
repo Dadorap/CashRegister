@@ -32,7 +32,7 @@ namespace CashRegister.AdminFolder
                 }
                 else
                 {
-                    Console.ForegroundColor = ConsoleColor.DarkMagenta;
+                    Console.ForegroundColor = ConsoleColor.DarkYellow;
                 }
                 Console.SetCursorPosition(xOffset, i + 1);
                 Console.WriteLine(list[i]);

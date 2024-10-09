@@ -18,10 +18,13 @@ namespace CashRegister.AdminFolder
 
             Console.Clear();
 
+            EditProduct editProduct = new EditProduct();
+            Promotional promotional = new Promotional();
+            GetReceipt getReceipt = new GetReceipt();
 
             List<string> menueList = new List<string>() { "Get Receipt","promotional prices", "Edit productList" };
 
-            Menu.menu(menueList,  GetReceipt.GetReceiptById, Promotional.PromotionalMenue ,EditProduct.EditProducts);
+            Menu.menu(menueList, getReceipt.GetReceiptById, promotional.PromotionalMenue ,editProduct.EditProducts);
 
             Console.ReadKey();
         }

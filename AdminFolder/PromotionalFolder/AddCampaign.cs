@@ -16,6 +16,7 @@ namespace CashRegister.AdminFolder.PromotionalFolder
         {
             string campPath = "../../../Files/Campaign.txt";
             DisplayCampaignRight displayCampaignRight = new DisplayCampaignRight();
+            Promotional promotional = new Promotional();
             var campList = GetCampaign.GetCamp();
             var prodList = ProdInfoReader.ReadProducts();
             ErrorMsg campErr = new ErrorMsg("Invalid input. Please enter a 4-digit number.");
@@ -38,7 +39,10 @@ namespace CashRegister.AdminFolder.PromotionalFolder
                     bool pluExist = false;
 
                     Console.SetCursorPosition(0, 0);
-                    Console.Write("Enter campaign ID (4-digit): ");
+                    Console.ForegroundColor = ConsoleColor.Green;
+                    Console.WriteLine("Creat New Campaign");
+                    Console.ResetColor();
+                    Console.WriteLine("Enter unique campaign ID (4-digit): ");
                     if (int.TryParse(Console.ReadLine(), out int campId) && Math.Abs(campId).ToString().Length == 4)
                     {
                         foreach (var camp in campList)
@@ -58,7 +62,7 @@ namespace CashRegister.AdminFolder.PromotionalFolder
                         {
                             continue;  
                         }
-                        Console.WriteLine("Enter products plu: ");
+                        Console.Write("Enter products plu: ");
                         if (int.TryParse(Console.ReadLine(), out int prodPlu) && Math.Abs(prodPlu).ToString().Length == 3)
                         {
                             foreach (var prod in prodList)
@@ -101,7 +105,7 @@ namespace CashRegister.AdminFolder.PromotionalFolder
                                         Console.ResetColor();
                                         Console.Write("Press any key to return to campaigne menu...");
                                         Console.ReadKey();
-                                        Promotional.PromotionalMenue();
+                                        promotional.PromotionalMenue();
                                     }
 
                                 }

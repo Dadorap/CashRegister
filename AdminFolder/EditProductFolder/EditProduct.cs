@@ -13,9 +13,10 @@ namespace CashRegister.AdminFolder.EditProductFolder
 {
     public class EditProduct 
     {
-        public static void EditProducts()
+        public void EditProducts()
         {
             Console.Clear();
+            AddProduct addProduct = new AddProduct();
             // menue list
             List<string> menueList = new List<string>() { "Add Product", "Remove product", "Display productList", "Change productName", "Change productPrice", "Return to main menu" };
 
@@ -42,19 +43,19 @@ namespace CashRegister.AdminFolder.EditProductFolder
                         switch (result)
                         {
                             case 1:
-                                AddProduct.AddPorductToList();
+                                addProduct.AddPorductToList();
                                 break;
                             case 2:
-                                DisplayProdList.DisplayAllProd();
+                                DeleteProduct.DeleteProdcutFromList();                                
                                 break;
                             case 3:
-                                ChangeName.ChangeProdName();
+                                DisplayProdList.DisplayAllProd();
                                 break;
                             case 4:
-                                PriceChange.AdjustPrice();
+                                NameChange.ChangeProdName();
                                 break;
                             case 5:
-                                DeleteProduct.DeleteProdcutFromList();
+                                PriceChange.AdjustPrice();                              
                                 break;                            
                             case 6:
                                 MainMenu.DisplayMenu();

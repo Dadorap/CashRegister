@@ -13,12 +13,12 @@ namespace CashRegister.ReceiptFolder
     {
         public string ProdName { get; set; }
         public decimal ProdPrice { get; set; }
-        public string UnitType { get; set; }
+        public UnitType UnitType { get; set; }
         public int Amount { get; set; }
         public decimal TotalSum { get; set; }
 
 
-        public Receipt(string prodName, int amount, decimal prodPrice, string prodType, decimal totalSum)
+        public Receipt(string prodName, int amount, decimal prodPrice, UnitType prodType, decimal totalSum)
         {
             ProdName = prodName;
             Amount = amount;

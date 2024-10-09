@@ -33,7 +33,7 @@ namespace CashRegister.AdminFolder.Display
                 }
                 else
                 {
-                    Console.ForegroundColor = ConsoleColor.DarkMagenta;
+                    Console.ForegroundColor = ConsoleColor.DarkYellow;
                 }
                 Console.SetCursorPosition(horiz, i + 1);
                 Console.WriteLine(campList[i]);

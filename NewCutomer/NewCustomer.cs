@@ -5,7 +5,7 @@ using CashRegister.ReceiptFolder;
 using CashRegister.Product;
 using CashRegister.MenuFolder;
 using CashRegister.AdminFolder.Display;
-using CashRegister.AdminFolder;
+
 
 namespace CashRegister.NewCutomer
 {

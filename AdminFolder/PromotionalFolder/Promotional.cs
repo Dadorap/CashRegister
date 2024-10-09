@@ -12,16 +12,17 @@ namespace CashRegister.AdminFolder.PromotionalFolder
     public class Promotional
     {
 
-        public static void PromotionalMenue()
+        public void PromotionalMenue()
         {
             Console.Clear();
 
-
+            RemoveCampaign removeCampaign = new RemoveCampaign();
+            
             List<string> menueList = new List<string>() { "Add campaign", "Remove campaign", "Return to main menu" };
 
             AddCampaign addCampaign = new AddCampaign();
 
-            Menu.menu(menueList, addCampaign.CreateCampaign, GetReceipt.GetReceiptById, MainMenu.DisplayMenu);
+            Menu.menu(menueList, addCampaign.CreateCampaign, removeCampaign.DeleteCampaign, MainMenu.DisplayMenu);
 
             Console.ReadKey();
         }

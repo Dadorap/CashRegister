@@ -14,6 +14,7 @@ namespace CashRegister
             Console.Clear();
             Console.WriteLine("Press any key to close the console...");
             Console.ReadKey();
+            Environment.Exit(0);
 
         }
     }

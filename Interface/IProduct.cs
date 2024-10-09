@@ -6,11 +6,16 @@ using System.Threading.Tasks;
 
 namespace CashRegister.Interface
 {
+    public enum UnitType
+    {
+        pc,
+        kg
+    }
     public interface IProduct
     {
-        public string ProdName { get; set; }
-        public decimal ProdPrice { get; set; }
-        public string UnitType { get; set; }
+        string ProdName { get; set; }
+        decimal ProdPrice { get; set; }
+        UnitType UnitType { get; set; }
 
 
 

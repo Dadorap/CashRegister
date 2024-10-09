@@ -1,11 +1,13 @@
-﻿using System;
+﻿global using CashRegister.AdminFolder;
+using System;
 using CashRegister.MenuFolder;
-using CashRegister.AdminFolder;
 using CashRegister.NewCutomer;
 using CashRegister.Product;
 using CashRegister.CampaignFolder;
 using CashRegister.AdminFolder.Display;
 using CashRegister.AdminFolder.PromotionalFolder;
+using CashRegister.AdminFolder.EditProductFolder;
+
 
 
 namespace CashRegister
@@ -18,6 +20,8 @@ namespace CashRegister
         static void Main(string[] args)
         {
             MainMenu.DisplayMenu();
+
+
 
 
 

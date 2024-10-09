@@ -9,14 +9,18 @@ using System.Threading.Tasks;
 
 namespace CashRegister.Product
 {
+
+
+
+
     public class Products : IProduct
     {
         public string ProdName { get; set; }
         public decimal ProdPrice { get; set; }
-        public string UnitType { get; set; }
+        public UnitType UnitType { get; set; }
         public int PLU { get; set; }
 
-        public Products(int plu, string name, decimal price, string type)
+        public Products(int plu, string name, decimal price, UnitType type)
         {
             PLU = plu;
             ProdName = name;

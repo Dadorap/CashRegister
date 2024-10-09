@@ -4,6 +4,7 @@ using System.Linq;
 using System.IO;
 using System.Text;
 using System.Threading.Tasks;
+using CashRegister.Interface;
 
 namespace CashRegister.Product
 {
@@ -29,10 +30,11 @@ namespace CashRegister.Product
                         decimal.TryParse(parts[2], out decimal price)) // Parse price
                     {
                         string name = parts[1];
-                        string type = parts[3];
+                        UnitType unitType = (UnitType)Enum.Parse(typeof(UnitType), parts[3]);
+
 
                         // Create the product and add it to the list
-                        Products product = new Products(id, name, price, type);
+                        Products product = new Products(id, name, price, unitType);
                         products.Add(product);
                     }
                     else

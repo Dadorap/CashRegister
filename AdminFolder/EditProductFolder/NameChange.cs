@@ -1,4 +1,5 @@
 ﻿using CashRegister.AdminFolder.Display;
+using CashRegister.Interface;
 using CashRegister.Product;
 using System;
 using System.Collections.Generic;
@@ -8,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace CashRegister.AdminFolder.EditProductFolder
 {
-    public class ChangeName
+    public class NameChange
     {
         public static void ChangeProdName()
         {
@@ -63,7 +64,8 @@ namespace CashRegister.AdminFolder.EditProductFolder
                             int plu = Convert.ToInt32(parts[0]);
                             string prodName = parts[1];
                             decimal price = Convert.ToDecimal(parts[2]);
-                            string unitType = parts[3];
+                            UnitType unitType = (UnitType)Enum.Parse(typeof(UnitType), parts[3]);
+
 
                             Products prodList = new Products(plu, prodName, price, unitType);
                             newList.Add(prodList);
