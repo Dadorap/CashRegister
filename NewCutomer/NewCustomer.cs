@@ -5,6 +5,7 @@ using CashRegister.ReceiptFolder;
 using CashRegister.Product;
 using CashRegister.MenuFolder;
 using CashRegister.AdminFolder.Display;
+using CashRegister.ErrorMesg;
 
 
 namespace CashRegister.NewCutomer
@@ -16,6 +17,8 @@ namespace CashRegister.NewCutomer
         {
             List<Products> productsList = ProdInfoReader.ReadProducts();
             CustormerShopping cart = new CustormerShopping();
+            ErrorMessage errFormat = new ErrorMessage("The input format is invalid.");
+            ErrorMessage errOvFlow = new ErrorMessage("Value is too large.");
 
             while (true)
             {
@@ -59,7 +62,7 @@ namespace CashRegister.NewCutomer
                         //Console.ReadKey();
                         //Menu.menu();
                         break;
-                    }else if (userInput == "cancel" && receipts.Count == 0)
+                    }else if (userInput == "cancel")
                     {
                         MainMenu.DisplayMenu();
                     }
@@ -69,10 +72,21 @@ namespace CashRegister.NewCutomer
 
                     }
                 }
+                catch (FormatException)
+                {
+                    errFormat.ErrorMsg();
+                }
+                catch (OverflowException)
+                {
+                    errOvFlow.ErrorMsg();
+                }
                 catch (Exception ex)
                 {
-
+                    Console.Clear();
+                    Console.ForegroundColor= ConsoleColor.DarkRed;
                     Console.WriteLine(ex.Message);
+                    Console.Write("Press any key to return...");
+                    Console.ReadKey();
                 }
             }
 

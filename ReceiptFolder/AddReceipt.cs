@@ -59,7 +59,7 @@ namespace CashRegister.ReceiptFolder
 
 
             string line = $"__________________________";
-            string header = $"\n\tMAXEISAND\n     Tel:0611-525252\n\tHÄRNÖSAND\n-------------------------\nPRODUCTS\t PRICE\n";
+            string header = $"\n\tMAXEISAND\n     Tel:0611-525252\n\tHÄRNÖSAND\n-------------------------\nPRODUCTS\tPRICE\n";
             string footer = $"-------------------------\nTOTAL:\t\t{total}\nORDER NUMBER:\t{orderNumber}\n{receiptDate}\t{time}\n-------------------------\n    THANKS FOR THE VISIT\n\tWELCOME BACK";
             // Receipt Header
             using (StreamWriter myStream = new StreamWriter(receiptPath, append: true))

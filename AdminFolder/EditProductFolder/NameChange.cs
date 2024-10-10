@@ -1,5 +1,7 @@
 ﻿using CashRegister.AdminFolder.Display;
+using CashRegister.ErrorMesg;
 using CashRegister.Interface;
+using CashRegister.MenuFolder;
 using CashRegister.Product;
 using System;
 using System.Collections.Generic;
@@ -11,16 +13,16 @@ namespace CashRegister.AdminFolder.EditProductFolder
 {
     public class NameChange
     {
-        public static void ChangeProdName()
+        public void ChangeProdName()
         {
-            Console.Clear();
             string path = "../../../Files/Products.txt";
             // displays product list to the right of side 
-            DisplayProductRight.DisplayProduct();
+            ErrorMessage errPlu = new ErrorMessage("The provided PLU was not found.\nPlease check the input and try again.");
 
             // sets every thing below to the left side 
-            Console.SetCursorPosition(0, 0);
-            Console.ForegroundColor = ConsoleColor.Green;
+
+            while (true)
+            {
 
 
             try
@@ -28,18 +30,24 @@ namespace CashRegister.AdminFolder.EditProductFolder
                 string[] lines = File.ReadAllLines(path);
                 List<Products> newList = new List<Products>();
                 bool state = true;
-                
+
 
                 while (state)
                 {
+                    Console.Clear();
+                    DisplayProductRight.DisplayProduct();
+                    Console.SetCursorPosition(0, 0);
+                    Console.ForegroundColor = ConsoleColor.Green;
+                    Console.WriteLine("Product Name Change");
+                    Console.ForegroundColor = ConsoleColor.Blue;
                     Console.Write("Enter PLU code: ");
                     string pluCode = Console.ReadLine();
                     // check to see if the plu exist and plu more then 2 digits
                     if (lines.Any(line => line.Contains(pluCode)) && pluCode.Length > 2)
                     {
-                 
-                    // reads the file
-                    foreach (var item in File.ReadLines(path))
+
+                        // reads the file
+                        foreach (var item in File.ReadLines(path))
                         {
                             string[] parts = item.Split(" ");
                             // checks for plu nr
@@ -73,7 +81,8 @@ namespace CashRegister.AdminFolder.EditProductFolder
                     }
                     else
                     {
-                        Console.WriteLine("Invalid plu code");
+                        errPlu.ErrorMsg();
+                        
                         continue;
 
                     }
@@ -88,23 +97,25 @@ namespace CashRegister.AdminFolder.EditProductFolder
                 // adds the new product list to the product.txt and print it to console
                 using (StreamWriter sw = new StreamWriter(path, append: false))
                 {
-                Console.ForegroundColor = ConsoleColor.Yellow;
+                    Console.ForegroundColor = ConsoleColor.Yellow;
                     foreach (var item in newList)
                     {
                         Console.WriteLine(item.ToString());
                         sw.WriteLine(item.ToString());
                     }
-                Console.ResetColor();
+                    Console.ResetColor();
                 }
 
-                
-                Console.Write("Press any key to return...");
+
+                Console.Write("Press any key to return to menu...");
                 Console.ReadKey();
+                MainMenu.DisplayMenu();
 
             }
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
+            }
             }
         }
     }

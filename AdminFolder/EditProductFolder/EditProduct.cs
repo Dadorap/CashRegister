@@ -17,6 +17,9 @@ namespace CashRegister.AdminFolder.EditProductFolder
         {
             Console.Clear();
             AddProduct addProduct = new AddProduct();
+            DeleteProduct deleteProduct = new DeleteProduct();
+            NameChange nameChange = new NameChange();
+            PriceChange priceChange = new PriceChange();
             // menue list
             List<string> menueList = new List<string>() { "Add Product", "Remove product", "Display productList", "Change productName", "Change productPrice", "Return to main menu" };
 
@@ -46,16 +49,16 @@ namespace CashRegister.AdminFolder.EditProductFolder
                                 addProduct.AddPorductToList();
                                 break;
                             case 2:
-                                DeleteProduct.DeleteProdcutFromList();                                
+                                deleteProduct.DeleteProdcutFromList();                                
                                 break;
                             case 3:
                                 DisplayProdList.DisplayAllProd();
                                 break;
                             case 4:
-                                NameChange.ChangeProdName();
+                                nameChange.ChangeProdName();
                                 break;
                             case 5:
-                                PriceChange.AdjustPrice();                              
+                                priceChange.AdjustPrice();                              
                                 break;                            
                             case 6:
                                 MainMenu.DisplayMenu();

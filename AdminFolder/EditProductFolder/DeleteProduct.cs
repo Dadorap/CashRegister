@@ -13,7 +13,7 @@ namespace CashRegister.AdminFolder.EditProductFolder
 {
     public class DeleteProduct
     {
-        public static void DeleteProdcutFromList()
+        public void DeleteProdcutFromList()
         {
             string path = "../../../Files/Products.txt";
             var prodList = ProdInfoReader.ReadProducts();

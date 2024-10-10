@@ -19,7 +19,7 @@ namespace CashRegister.AdminFolder.EditProductFolder
         {
             string filePath = "../../../Files/Products.txt";
             var prodList = ProdInfoReader.ReadProducts();
-            ErrorMessage errId = new ErrorMessage("Invalid id");
+            ErrorMessage errId = new ErrorMessage("Invalid input");
             bool state = true;
 
             while (state)
@@ -77,8 +77,8 @@ namespace CashRegister.AdminFolder.EditProductFolder
                             {
                                 Console.Write("Product price: ");
                                 int prodPrice = Math.Abs(int.Parse(Console.ReadLine()));
-                                Console.Write("Product unit type: ");
-                                UnitType unitType = (UnitType)Enum.Parse(typeof(UnitType), Console.ReadLine());
+                                Console.Write("Product unit type(pc/kg): ");
+                                UnitType unitType = (UnitType)Enum.Parse(typeof(UnitType), Console.ReadLine().ToLower());
 
 
                                 string prodInfo = $"{prodId} {prodName} {prodPrice} {unitType}";

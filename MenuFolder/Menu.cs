@@ -15,8 +15,9 @@ namespace CashRegister.MenuFolder
             while (true)
             {
                 Console.Clear();
-                Console.Write("Choose something from below and press Enter key to start \n");
-
+                Console.ForegroundColor = ConsoleColor.DarkYellow;
+                Console.Write("Choose an option and press Enter:\n");
+                Console.ResetColor();
                 for (int i = 0; i < menue.Count; i++)
                 {
                     if (i == currentSelect)
