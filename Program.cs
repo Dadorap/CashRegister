@@ -19,7 +19,9 @@ namespace CashRegister
 
         static void Main(string[] args)
         {
-            MainMenu.DisplayMenu();
+            //MainMenu.DisplayMenu();
+
+            DeleteProduct.DeleteProdcutFromList();
 
 
 

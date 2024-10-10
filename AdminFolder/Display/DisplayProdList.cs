@@ -16,7 +16,7 @@ namespace CashRegister.AdminFolder.Display
             int i = 0;
             Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine("Product list");
-            Console.WriteLine("PLU - Name - Price - Unit");
+            Console.WriteLine("PLU-Name-Price-Unit");
 
             foreach (Products product in productsList)
             {

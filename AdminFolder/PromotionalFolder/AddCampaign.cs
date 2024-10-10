@@ -19,11 +19,11 @@ namespace CashRegister.AdminFolder.PromotionalFolder
             Promotional promotional = new Promotional();
             var campList = GetCampaign.GetCamp();
             var prodList = ProdInfoReader.ReadProducts();
-            ErrorMsg campErr = new ErrorMsg("Invalid input. Please enter a 4-digit number.");
-            ErrorMsg pluErr = new ErrorMsg("Invalid input. Please enter a 3-digit number.");
-            ErrorMsg pluExistErr = new ErrorMsg("PLU does not exist! Try again");
-            ErrorMsg formatErr = new ErrorMsg("Please use the correct format.");
-            ErrorMsg disErr = new ErrorMsg("Please enter a number between 1-100.");
+            ErrorMessage campErr = new ErrorMessage("Invalid input. Please enter a 4-digit number.");
+            ErrorMessage pluErr = new ErrorMessage("Invalid input. Please enter a 3-digit number.");
+            ErrorMessage pluExistErr = new ErrorMessage("PLU does not exist! Try again");
+            ErrorMessage formatErr = new ErrorMessage("Please use the correct format.");
+            ErrorMessage disErr = new ErrorMessage("Please enter a number between 1-100.");
 
 
             while (true)
@@ -111,35 +111,35 @@ namespace CashRegister.AdminFolder.PromotionalFolder
                                 }
                                 else
                                 {
-                                    disErr.ErrorMessage();
+                                    disErr.ErrorMsg();
                                    
 
                                 }
                             }
                             else
                             {
-                                pluExistErr.ErrorMessage();
+                                pluExistErr.ErrorMsg();
 
                             }
 
                         }
                         else
                         {
-                            pluErr.ErrorMessage();
+                            pluErr.ErrorMsg();
                         }
 
 
                     }
                     else
                     {
-                        campErr.ErrorMessage();                       
+                        campErr.ErrorMsg();                       
                     }
 
 
                 }
                 catch (FormatException)
                 {
-                    formatErr.ErrorMessage();
+                    formatErr.ErrorMsg();
                 }
                 catch (Exception ex)
                 {

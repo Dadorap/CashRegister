@@ -19,7 +19,7 @@ namespace CashRegister.AdminFolder.EditProductFolder
         {
             string filePath = "../../../Files/Products.txt";
             var prodList = ProdInfoReader.ReadProducts();
-            ErrorMsg errId = new ErrorMsg("Invalid id");
+            ErrorMessage errId = new ErrorMessage("Invalid id");
             bool state = true;
 
             while (state)
@@ -96,7 +96,7 @@ namespace CashRegister.AdminFolder.EditProductFolder
                     }
                     else
                     {
-                        errId.ErrorMessage();
+                        errId.ErrorMsg();
                     }
 
                 }

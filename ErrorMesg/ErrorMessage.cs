@@ -6,20 +6,20 @@ using System.Threading.Tasks;
 
 namespace CashRegister.ErrorMesg
 {
-    public class ErrorMsg
+    public class ErrorMessage
     {
-        public string ErrorMesg {  get; set; }
+        public string ErrMsg {  get; set; }
 
-        public ErrorMsg(string _msg)
+        public ErrorMessage(string _msg)
         {
-            ErrorMesg = _msg;
+            ErrMsg = _msg;
         }
 
-        public void ErrorMessage()
+        public void ErrorMsg()
         {
             Console.Clear();
             Console.ForegroundColor = ConsoleColor.Red;
-            Console.WriteLine(ErrorMesg);
+            Console.WriteLine(ErrMsg);
             Console.ResetColor();
             Console.Write("Enter any key to return...");
             Console.ReadKey();
