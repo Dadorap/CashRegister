@@ -44,6 +44,10 @@ namespace CashRegister.NewCutomer
                     List<Receipt> receipts = cart.GetReceipts();
                     foreach (Receipt receipt in receipts)
                     {
+                        if (receipt.Amount == 0)
+                        {
+                            continue;
+                        }
                         Console.WriteLine($"{receipt.ProdName} {receipt.Amount}{receipt.UnitType} * {receipt.ProdPrice} = {receipt.Amount * receipt.ProdPrice}");
                         total += receipt.TotalSum;
                     }
