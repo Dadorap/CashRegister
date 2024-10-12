@@ -20,7 +20,8 @@ namespace CashRegisterSystem
 
         static void Main(string[] args)
         {
-            MainMenu.DisplayMenu();
+            MainMenu mainMenu = new MainMenu();
+            mainMenu.DisplayMenu();
         }
 
     }

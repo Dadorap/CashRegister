@@ -17,14 +17,14 @@ namespace CashRegisterSystem.AdminFolder
         {
 
             Console.Clear();
-
+            Menu menu = new Menu();
             EditProductMenu editProduct = new EditProductMenu();
             Promotional promotional = new Promotional();
             GetReceipt getReceipt = new GetReceipt();
 
             List<string> menueList = new List<string>() { "Get Receipt","promotional prices", "Edit productList" };
 
-            Menu.DisplayMenu(menueList, getReceipt.GetReceiptById, promotional.PromotionalMenue ,editProduct.EditProductsMenu);
+            menu.DisplayMenu(menueList, getReceipt.GetReceiptById, promotional.PromotionalMenue ,editProduct.EditProductsMenu);
 
             Console.ReadKey();
         }

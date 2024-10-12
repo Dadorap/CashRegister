@@ -14,6 +14,7 @@ namespace CashRegisterSystem.ReceiptFolder
         public void DisplayReceipt(string path, int orderNumber)
         {
             Console.Clear();
+            MainMenu mainMenu = new MainMenu();
             string searchOrderNumber = "ORDER NUMBER:\t" + orderNumber;
             bool isWithinReceipt = false;
             string receiptContent = string.Empty;
@@ -59,7 +60,7 @@ namespace CashRegisterSystem.ReceiptFolder
             Console.ResetColor();
             Console.Write("Press any key to return to menue...");
             Console.ReadKey();
-            MainMenu.DisplayMenu();
+            mainMenu.DisplayMenu();
 
         }
     }

@@ -15,14 +15,14 @@ namespace CashRegisterSystem.AdminFolder.PromotionalFolder
         public void PromotionalMenue()
         {
             Console.Clear();
-
-            RemoveCampaign removeCampaign = new RemoveCampaign();
+            Menu menu = new Menu();
+            MainMenu mainMenu = new MainMenu();
+            AddCampaign addCampaign = new AddCampaign();
+            RemoveCampaign removeCampaign = new RemoveCampaign();    
             
             List<string> menueList = new List<string>() { "Add campaign", "Remove campaign", "Return to main menu" };
 
-            AddCampaign addCampaign = new AddCampaign();
-
-            Menu.DisplayMenu(menueList, addCampaign.CreateCampaign, removeCampaign.DeleteCampaign, MainMenu.DisplayMenu);
+            menu.DisplayMenu(menueList, addCampaign.CreateCampaign, removeCampaign.DeleteCampaign, mainMenu.DisplayMenu);
 
             Console.ReadKey();
         }

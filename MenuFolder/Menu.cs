@@ -8,7 +8,7 @@ namespace CashRegisterSystem.MenuFolder
 {
     public class Menu
     {
-        public static void DisplayMenu(List<string> menue, Action option1, Action option2, Action option3)
+        public void DisplayMenu(List<string> menue, Action option1, Action option2, Action option3)
         {
             int currentSelect = 0;
 

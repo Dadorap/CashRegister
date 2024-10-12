@@ -12,15 +12,14 @@ namespace CashRegisterSystem.MenuFolder
 {
     public class MainMenu
     {
-        public static void DisplayMenu()
+        public void DisplayMenu()
         {
-           NewCustomer newCustomer = new NewCustomer();
+            Menu menu = new Menu();
+            NewCustomer newCustomer = new NewCustomer();
             Admin adminMenu = new Admin();
             Exit exit = new Exit();
-
-            ProdInfoReader.ReadProducts();
-            List<string> menu = new List<string>() { "New Customer", "Admin Tools", "Exit" };
-            Menu.DisplayMenu(menu, newCustomer.CashRegister, adminMenu.AdminMenue, exit.Close);
+            List<string> menuList = new List<string>() { "New Customer", "Admin Tools", "Exit" };
+            menu.DisplayMenu(menuList, newCustomer.CashRegister, adminMenu.AdminMenue, exit.Close);
         }
     }
 }

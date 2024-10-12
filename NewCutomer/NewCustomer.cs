@@ -21,6 +21,7 @@ namespace CashRegisterSystem.NewCutomer
             ErrorMessage errFormat = new ErrorMessage("The input format is invalid.");
             ErrorMessage errOvFlow = new ErrorMessage("Value is too large.");
             AddReceipt addReceipt = new AddReceipt();
+            MainMenu mainMenu = new MainMenu();
 
             while (true)
             {
@@ -63,14 +64,11 @@ namespace CashRegisterSystem.NewCutomer
                     if (userInput == "pay" && receipts.Count > 0)
                     {
                         addReceipt.AddReceipts(receipts, total);
-                        //Console.WriteLine("Thank you come again!");
-                        //Console.WriteLine("press any key to return to the menue...");
-                        //Console.ReadKey();
-                        //Menu.menu();
                         break;
-                    }else if (userInput == "cancel")
+                    }
+                    else if (userInput == "cancel")
                     {
-                        MainMenu.DisplayMenu();
+                        mainMenu.DisplayMenu();
                     }
                     else
                     {
@@ -89,7 +87,7 @@ namespace CashRegisterSystem.NewCutomer
                 catch (Exception ex)
                 {
                     Console.Clear();
-                    Console.ForegroundColor= ConsoleColor.DarkRed;
+                    Console.ForegroundColor = ConsoleColor.DarkRed;
                     Console.WriteLine(ex.Message);
                     Console.Write("Press any key to return...");
                     Console.ReadKey();
