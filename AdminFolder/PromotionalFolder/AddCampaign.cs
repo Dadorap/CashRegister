@@ -1,14 +1,14 @@
-﻿using CashRegister.AdminFolder.Display;
-using CashRegister.CampaignFolder;
-using CashRegister.Product;
-using CashRegister.ErrorMesg;
+﻿using CashRegisterSystem.AdminFolder.Display;
+using CashRegisterSystem.CampaignFolder;
+using CashRegisterSystem.Product;
+using CashRegisterSystem.ErrorMesg;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CashRegister.AdminFolder.PromotionalFolder
+namespace CashRegisterSystem.AdminFolder.PromotionalFolder
 {
     public class AddCampaign
     {
@@ -16,6 +16,7 @@ namespace CashRegister.AdminFolder.PromotionalFolder
         {
             string campPath = "../../../Files/Campaign.txt";
             DisplayCampaignRight displayCampaignRight = new DisplayCampaignRight();
+            DisplayProductRight displayProduct = new DisplayProductRight(36);
             Promotional promotional = new Promotional();
             var campList = GetCampaign.GetCamp();
             var prodList = ProdInfoReader.ReadProducts();
@@ -30,7 +31,7 @@ namespace CashRegister.AdminFolder.PromotionalFolder
             {
                 Console.Clear();
                 displayCampaignRight.DisplayCampaign(60);
-                DisplayProductRight.DisplayProduct();
+                displayProduct.DisplayProduct();
                 try
                 {
 

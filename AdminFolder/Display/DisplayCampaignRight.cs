@@ -1,12 +1,12 @@
-﻿using CashRegister.CampaignFolder;
-using CashRegister.Product;
+﻿using CashRegisterSystem.CampaignFolder;
+using CashRegisterSystem.Product;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CashRegister.AdminFolder.Display
+namespace CashRegisterSystem.AdminFolder.Display
 {
     public class DisplayCampaignRight
     {

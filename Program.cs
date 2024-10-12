@@ -1,16 +1,17 @@
-﻿global using CashRegister.AdminFolder;
+﻿global using CashRegisterSystem.AdminFolder;
 using System;
-using CashRegister.MenuFolder;
-using CashRegister.NewCutomer;
-using CashRegister.Product;
-using CashRegister.CampaignFolder;
-using CashRegister.AdminFolder.Display;
-using CashRegister.AdminFolder.PromotionalFolder;
-using CashRegister.AdminFolder.EditProductFolder;
+using CashRegisterSystem.MenuFolder;
+using CashRegisterSystem.NewCutomer;
+using CashRegisterSystem.Product;
+using CashRegisterSystem.CampaignFolder;
+using CashRegisterSystem.AdminFolder.Display;
+using CashRegisterSystem.AdminFolder.PromotionalFolder;
+using CashRegisterSystem.AdminFolder.EditProductFolder;
+using CashRegisterSystem.AdminFolder.Receipt;
 
 
 
-namespace CashRegister
+namespace CashRegisterSystem
 {
     public class Program
     {
@@ -20,13 +21,6 @@ namespace CashRegister
         static void Main(string[] args)
         {
             MainMenu.DisplayMenu();
-
-
-
-
-
-
-
         }
 
     }

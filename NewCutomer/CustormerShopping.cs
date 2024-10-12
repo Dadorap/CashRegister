@@ -4,21 +4,23 @@ using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using CashRegister.ReceiptFolder;
-using CashRegister.Product;
-using CashRegister.CampaignFolder;
+using CashRegisterSystem.ReceiptFolder;
+using CashRegisterSystem.Product;
+using CashRegisterSystem.CampaignFolder;
 
-namespace CashRegister.NewCutomer
+namespace CashRegisterSystem.NewCutomer
 {
     public class CustormerShopping
     {
-        private List<Receipt> prodRec = new List<Receipt>();
 
+        private List<Receipt> prodRec = new List<Receipt>();
         public void Addshopping(string userInput)
         {
+
             List<Products> productsList = ProdInfoReader.ReadProducts();
             string campPath = "../../../Files/Campaign.txt";
             string[] userInputParts = userInput.Split(" ");
+            CampaignChecker campaignChecker = new CampaignChecker();
 
 
             int prodId = int.Parse(userInputParts[0]);
@@ -26,7 +28,7 @@ namespace CashRegister.NewCutomer
 
 
             // gets the discount amount in Percent
-            decimal priceDiscount = CampaignChecker.GetPrice(prodId);
+            decimal priceDiscount = campaignChecker.GetPrice(prodId);
 
 
 

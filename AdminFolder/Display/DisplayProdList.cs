@@ -1,15 +1,15 @@
-﻿using CashRegister.Product;
+﻿using CashRegisterSystem.Product;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CashRegister.AdminFolder.Display
+namespace CashRegisterSystem.AdminFolder.Display
 {
-    internal class DisplayProdList
+    public class DisplayProdList
     {
-        public static void DisplayAllProd()
+        public void DisplayAllProd()
         {
             Console.Clear();
             List<Products> productsList = ProdInfoReader.ReadProducts();

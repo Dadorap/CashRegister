@@ -1,21 +1,26 @@
-﻿using CashRegister.Product;
+﻿using CashRegisterSystem.Product;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CashRegister.AdminFolder
+namespace CashRegisterSystem.AdminFolder
 {
     public class DisplayProductRight
     {
-        public static void DisplayProduct()
+        public int XOffset { get; set; }
+        public DisplayProductRight(int _xOffset)
+        {
+            XOffset = _xOffset;
+        }
+        public void DisplayProduct()
         {
             List<string> list = new List<string>();
             string path = "../../../Files/Products.txt";
-            int xOffset = 36;
 
-            Console.SetCursorPosition(xOffset, 0);
+
+            Console.SetCursorPosition(XOffset, 0);
             Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine("PLUs- Product - Price");
             // display list of all product
@@ -34,7 +39,7 @@ namespace CashRegister.AdminFolder
                 {
                     Console.ForegroundColor = ConsoleColor.DarkYellow;
                 }
-                Console.SetCursorPosition(xOffset, i + 1);
+                Console.SetCursorPosition(XOffset, i + 1);
                 Console.WriteLine(list[i]);
             }
 

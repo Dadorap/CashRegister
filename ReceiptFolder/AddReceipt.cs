@@ -5,14 +5,14 @@ using System.Reflection.PortableExecutable;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CashRegister.ReceiptFolder
+namespace CashRegisterSystem.ReceiptFolder
 {
     public class AddReceipt
     {
-        public static void AddReceipts(List<Receipt> receipt, decimal total)
+        public void AddReceipts(List<Receipt> receipt, decimal total)
         {
             int orderNumber = 4000;
-            
+            FindReceipt readReceipt = new FindReceipt();
             var receiptDate = DateTime.Now.ToShortDateString().Replace("-", "/");
             var time = DateTime.Now.ToString("HH:mm");
             var date = DateTime.Now.ToShortDateString().Split("-");
@@ -84,7 +84,7 @@ namespace CashRegister.ReceiptFolder
                 myStream.WriteLine(line);
             }
 
-            ReadReceipt.DisplayReceipt(receiptPath, orderNumber);
+            readReceipt.DisplayReceipt(receiptPath, orderNumber);
         }
     }
 }

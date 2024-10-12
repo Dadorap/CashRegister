@@ -1,4 +1,4 @@
-﻿using CashRegister.Interface;
+﻿using CashRegisterSystem.Interface;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
 
-namespace CashRegister.ReceiptFolder
+namespace CashRegisterSystem.ReceiptFolder
 {
     public class Receipt : IProduct
     {

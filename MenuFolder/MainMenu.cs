@@ -1,22 +1,26 @@
-﻿using CashRegister.AdminFolder;
-using CashRegister.NewCutomer;
-using CashRegister;
+﻿using CashRegisterSystem.AdminFolder;
+using CashRegisterSystem.NewCutomer;
+using CashRegisterSystem;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using CashRegister.Product;
+using CashRegisterSystem.Product;
 
-namespace CashRegister.MenuFolder
+namespace CashRegisterSystem.MenuFolder
 {
     public class MainMenu
     {
         public static void DisplayMenu()
         {
+           NewCustomer newCustomer = new NewCustomer();
+            Admin adminMenu = new Admin();
+            Exit exit = new Exit();
+
             ProdInfoReader.ReadProducts();
             List<string> menu = new List<string>() { "New Customer", "Admin Tools", "Exit" };
-            Menu.menu(menu, NewCustomer.Kassa, Admin.AdminMenue, Exit.Close);
+            Menu.DisplayMenu(menu, newCustomer.CashRegister, adminMenu.AdminMenue, exit.Close);
         }
     }
 }

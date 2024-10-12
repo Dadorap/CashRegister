@@ -4,18 +4,14 @@ __________________________
      Tel:0611-525252
 	HÄRNÖSAND
 -------------------------
-PRODUCTS	 PRICE
+PRODUCTS	PRICE
 
  Banan
-  5kg*10,15	50,75
- kött
-  2kg*79	158
- Fanta
-  10pc*10	100
+  2kg*14,0	28,0
  -------------------------
-TOTAL:		308,75
-ORDER NUMBER:	4010
-2024/10/10	12:11
+TOTAL:		28,0
+ORDER NUMBER:	4013
+2024/10/12	10:17
 -------------------------
     THANKS FOR THE VISIT
 	WELCOME BACK
@@ -29,17 +25,13 @@ __________________________
 PRODUCTS	PRICE
 
  Banan
-  2kg*10,15	20,30
+  10kg*14,0	140,0
  kött
   5kg*79	395
- kyckling
-  5kg*76,5	382,5
- Kiwi
-  3kg*39,50	118,50
  -------------------------
-TOTAL:		916,30
-ORDER NUMBER:	4011
-2024/10/10	12:11
+TOTAL:		535,0
+ORDER NUMBER:	4014
+2024/10/12	10:50
 -------------------------
     THANKS FOR THE VISIT
 	WELCOME BACK
@@ -52,14 +44,34 @@ __________________________
 -------------------------
 PRODUCTS	PRICE
 
- kött
-  10kg*79	790
- kyckling
-  2kg*76,5	153,0
+ Banan
+  1kg*14,0	14,0
+ Kiwi
+  2kg*39,50	79,00
  -------------------------
-TOTAL:		943,0
-ORDER NUMBER:	4012
-2024/10/10	22:02
+TOTAL:		93,00
+ORDER NUMBER:	4015
+2024/10/12	10:54
+-------------------------
+    THANKS FOR THE VISIT
+	WELCOME BACK
+__________________________
+__________________________
+
+	MAXEISAND
+     Tel:0611-525252
+	HÄRNÖSAND
+-------------------------
+PRODUCTS	PRICE
+
+ Korv
+  5pc*26,66	133,30
+ kött
+  5kg*79	395
+ -------------------------
+TOTAL:		528,32
+ORDER NUMBER:	4016
+2024/10/12	12:36
 -------------------------
     THANKS FOR THE VISIT
 	WELCOME BACK

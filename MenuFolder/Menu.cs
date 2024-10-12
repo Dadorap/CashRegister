@@ -1,14 +1,14 @@
 ﻿using System;
 using System.Security;
-using CashRegister.AdminFolder;
-using CashRegister.NewCutomer;
+using CashRegisterSystem.AdminFolder;
+using CashRegisterSystem.NewCutomer;
 
 
-namespace CashRegister.MenuFolder
+namespace CashRegisterSystem.MenuFolder
 {
     public class Menu
     {
-        public static void menu(List<string> menue, Action option1, Action option2, Action option3)
+        public static void DisplayMenu(List<string> menue, Action option1, Action option2, Action option3)
         {
             int currentSelect = 0;
 

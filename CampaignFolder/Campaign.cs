@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CashRegister.CampaignFolder
+namespace CashRegisterSystem.CampaignFolder
 {
     public class Campaign
     {

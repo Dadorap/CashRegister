@@ -1,7 +1,7 @@
-﻿using CashRegister.AdminFolder.Display;
-using CashRegister.CampaignFolder;
-using CashRegister.ErrorMesg;
-using CashRegister.MenuFolder;
+﻿using CashRegisterSystem.AdminFolder.Display;
+using CashRegisterSystem.CampaignFolder;
+using CashRegisterSystem.ErrorMesg;
+using CashRegisterSystem.MenuFolder;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -9,7 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CashRegister.AdminFolder.PromotionalFolder
+namespace CashRegisterSystem.AdminFolder.PromotionalFolder
 {
     public class RemoveCampaign
     {
@@ -28,7 +28,9 @@ namespace CashRegister.AdminFolder.PromotionalFolder
                 displayCampaignRight.DisplayCampaign(40);
                 Console.SetCursorPosition(0, 0);
                 bool idExist = false;
-
+                Console.ForegroundColor = ConsoleColor.Green;
+                Console.WriteLine("Remove a Campaign");
+                Console.ForegroundColor = ConsoleColor.Blue;
                 Console.Write("Enter campaign id: ");
 
                 if (int.TryParse(Console.ReadLine(), out int inputId) && Math.Abs(inputId).ToString().Length == 4)

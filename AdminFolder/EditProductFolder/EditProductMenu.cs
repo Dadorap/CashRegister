@@ -1,25 +1,26 @@
-﻿using CashRegister.AdminFolder.Display;
-using CashRegister.AdminFolder.EditProductFolder;
-using CashRegister.Interface;
-using CashRegister.MenuFolder;
-using CashRegister.Product;
+﻿using CashRegisterSystem.AdminFolder.Display;
+using CashRegisterSystem.AdminFolder.EditProductFolder;
+using CashRegisterSystem.Interface;
+using CashRegisterSystem.MenuFolder;
+using CashRegisterSystem.Product;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CashRegister.AdminFolder.EditProductFolder
+namespace CashRegisterSystem.AdminFolder.EditProductFolder
 {
-    public class EditProduct 
+    public class EditProductMenu 
     {
-        public void EditProducts()
+        public void EditProductsMenu()
         {
             Console.Clear();
             AddProduct addProduct = new AddProduct();
             DeleteProduct deleteProduct = new DeleteProduct();
             NameChange nameChange = new NameChange();
             PriceChange priceChange = new PriceChange();
+            DisplayProdList displayProdList = new DisplayProdList();
             // menue list
             List<string> menueList = new List<string>() { "Add Product", "Remove product", "Display productList", "Change productName", "Change productPrice", "Return to main menu" };
 
@@ -52,7 +53,7 @@ namespace CashRegister.AdminFolder.EditProductFolder
                                 deleteProduct.DeleteProdcutFromList();                                
                                 break;
                             case 3:
-                                DisplayProdList.DisplayAllProd();
+                                displayProdList.DisplayAllProd();
                                 break;
                             case 4:
                                 nameChange.ChangeProdName();

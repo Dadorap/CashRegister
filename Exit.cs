@@ -5,11 +5,11 @@ using System.Text;
 using System.Threading.Tasks;
 
 
-namespace CashRegister
+namespace CashRegisterSystem
 {
     class Exit
     {
-        public static void Close()
+        public void Close()
         {
             Console.Clear();
             Console.WriteLine("Press any key to close the console...");

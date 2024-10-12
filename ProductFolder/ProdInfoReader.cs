@@ -4,9 +4,9 @@ using System.Linq;
 using System.IO;
 using System.Text;
 using System.Threading.Tasks;
-using CashRegister.Interface;
+using CashRegisterSystem.Interface;
 
-namespace CashRegister.Product
+namespace CashRegisterSystem.Product
 {
     public class ProdInfoReader
     {

@@ -1,8 +1,8 @@
-﻿using CashRegister.AdminFolder.Display;
-using CashRegister.ErrorMesg;
-using CashRegister.Interface;
-using CashRegister.MenuFolder;
-using CashRegister.Product;
+﻿using CashRegisterSystem.AdminFolder.Display;
+using CashRegisterSystem.ErrorMesg;
+using CashRegisterSystem.Interface;
+using CashRegisterSystem.MenuFolder;
+using CashRegisterSystem.Product;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -11,7 +11,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
 
-namespace CashRegister.AdminFolder.EditProductFolder
+namespace CashRegisterSystem.AdminFolder.EditProductFolder
 {
     public class AddProduct
     {
@@ -19,7 +19,9 @@ namespace CashRegister.AdminFolder.EditProductFolder
         {
             string filePath = "../../../Files/Products.txt";
             var prodList = ProdInfoReader.ReadProducts();
+            DisplayProductRight displayProduct = new DisplayProductRight(35);
             ErrorMessage errId = new ErrorMessage("Invalid input");
+            EditProductMenu menu = new EditProductMenu();
             bool state = true;
 
             while (state)
@@ -30,7 +32,7 @@ namespace CashRegister.AdminFolder.EditProductFolder
 
 
                     Console.Clear();
-                    DisplayProductRight.DisplayProduct();
+                    displayProduct.DisplayProduct();
                     Console.ForegroundColor = ConsoleColor.Green;
                     bool idExist = false;
                     bool isDigit = false;
@@ -76,7 +78,7 @@ namespace CashRegister.AdminFolder.EditProductFolder
                             if (!isDigit)
                             {
                                 Console.Write("Product price: ");
-                                int prodPrice = Math.Abs(int.Parse(Console.ReadLine()));
+                                var prodPrice = Math.Round(Math.Abs(Convert.ToDecimal(Console.ReadLine())), 2, MidpointRounding.ToZero);
                                 Console.Write("Product unit type(pc/kg): ");
                                 UnitType unitType = (UnitType)Enum.Parse(typeof(UnitType), Console.ReadLine().ToLower());
 
@@ -90,9 +92,9 @@ namespace CashRegister.AdminFolder.EditProductFolder
                             }
                         }
                         Console.ResetColor();
-                        Console.Write("Press any key to return to menu...");
+                        Console.Write("Press any key to return to edit menu...");
                         Console.ReadKey();
-                        MainMenu.DisplayMenu();
+                        menu.EditProductsMenu();
                     }
                     else
                     {

@@ -1,14 +1,15 @@
-﻿using CashRegister.AdminFolder.Display;
-using CashRegister.ErrorMesg;
-using CashRegister.Interface;
-using CashRegister.Product;
+﻿using CashRegisterSystem.AdminFolder.Display;
+using CashRegisterSystem.ErrorMesg;
+using CashRegisterSystem.Interface;
+using CashRegisterSystem.MenuFolder;
+using CashRegisterSystem.Product;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CashRegister.AdminFolder.EditProductFolder
+namespace CashRegisterSystem.AdminFolder.EditProductFolder
 {
     public class PriceChange
     {
@@ -18,21 +19,23 @@ namespace CashRegister.AdminFolder.EditProductFolder
             ErrorMessage errInput = new ErrorMessage("Invalid input. Try again.");
             ErrorMessage errFormat = new ErrorMessage("The input format is invalid.");
             ErrorMessage errOvFlow = new ErrorMessage("Value is too large.");
+            DisplayProductRight displayProduct = new DisplayProductRight(40);
+            EditProductMenu menu = new EditProductMenu();
 
 
-            List<Products> newList = new List<Products>();
             while (true)
             {
 
                 try
                 {
+                    List<Products> newList = new List<Products>();
                     bool state = true;
                     while (state)
                     {
 
 
                         Console.Clear();
-                        DisplayProductRight.DisplayProduct();
+                        displayProduct.DisplayProduct();
 
                         // sets every thing below to the left side 
                         Console.SetCursorPosition(0, 0);
@@ -55,16 +58,18 @@ namespace CashRegister.AdminFolder.EditProductFolder
                                 {
                                     while (state)
                                     {
-                                        Console.Write($"{parts[2]} Will be changed.\nEnter new product price: ");
-                                        string newProdName = Console.ReadLine();
-                                        if (newProdName.Length > 0)
+                                        Console.Write($"{parts[2]} Will be changed.\nEnter new product price(00,00): ");
+                                        //string newProdPrice = Console.ReadLine();
+                                        if (decimal.TryParse(Console.ReadLine(), out decimal newProdPrice) && newProdPrice > 0)
                                         {
-                                            parts[2] = newProdName;
+
+                                            parts[2] = Math.Round(Math.Abs(Convert.ToDecimal(newProdPrice)), 2, MidpointRounding.ToZero).ToString();
                                             state = false;
+
                                         }
+
                                         else
                                         {
-                                            Console.WriteLine("Invalid product name input");
                                             continue;
                                         }
                                     }
@@ -103,11 +108,10 @@ namespace CashRegister.AdminFolder.EditProductFolder
                             sw.WriteLine(item.ToString());
                         }
                     }
-
                     Console.ResetColor();
-
-                    Console.Write("Press any key to return...");
+                    Console.Write("Press any key to return to edit menu...");
                     Console.ReadKey();
+                    menu.EditProductsMenu();
 
                 }
                 catch (OverflowException)

@@ -1,15 +1,15 @@
-﻿using CashRegister.Product;
+﻿using CashRegisterSystem.Product;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.IO;
-using CashRegister.AdminFolder.Display;
-using CashRegister.ErrorMesg;
-using CashRegister.MenuFolder;
+using CashRegisterSystem.AdminFolder.Display;
+using CashRegisterSystem.ErrorMesg;
+using CashRegisterSystem.MenuFolder;
 
-namespace CashRegister.AdminFolder.EditProductFolder
+namespace CashRegisterSystem.AdminFolder.EditProductFolder
 {
     public class DeleteProduct
     {
@@ -17,14 +17,17 @@ namespace CashRegister.AdminFolder.EditProductFolder
         {
             string path = "../../../Files/Products.txt";
             var prodList = ProdInfoReader.ReadProducts();
+            EditProductMenu menu = new EditProductMenu();
             ErrorMessage errPlu = new ErrorMessage("The provided PLU was not found.\nPlease check the input and try again.");
+            DisplayProductRight displayProduct = new DisplayProductRight(35);
+
 
             while (true)
             {
                 Console.Clear();
 
                 // displays product list to the right of console
-                DisplayProductRight.DisplayProduct();
+                displayProduct.DisplayProduct();
 
 
                 Console.SetCursorPosition(0, 0);
@@ -64,9 +67,9 @@ namespace CashRegister.AdminFolder.EditProductFolder
                         Console.ForegroundColor = ConsoleColor.DarkRed;
                         Console.WriteLine("Product with PLU code " + pluCode + " has been removed.");
                         Console.ResetColor();
-                        Console.Write("Press any key to return...");
+                        Console.Write("Press any key to return to edit menu...");
                         Console.ReadKey();
-                        MainMenu.DisplayMenu();
+                        menu.EditProductsMenu();
                     }
 
                 }

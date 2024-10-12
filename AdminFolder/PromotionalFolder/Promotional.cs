@@ -1,13 +1,13 @@
-﻿using CashRegister.AdminFolder.EditProductFolder;
-using CashRegister.AdminFolder.Receipt;
+﻿using CashRegisterSystem.AdminFolder.EditProductFolder;
+using CashRegisterSystem.AdminFolder.Receipt;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using CashRegister.MenuFolder;
+using CashRegisterSystem.MenuFolder;
 
-namespace CashRegister.AdminFolder.PromotionalFolder
+namespace CashRegisterSystem.AdminFolder.PromotionalFolder
 {
     public class Promotional
     {
@@ -22,7 +22,7 @@ namespace CashRegister.AdminFolder.PromotionalFolder
 
             AddCampaign addCampaign = new AddCampaign();
 
-            Menu.menu(menueList, addCampaign.CreateCampaign, removeCampaign.DeleteCampaign, MainMenu.DisplayMenu);
+            Menu.DisplayMenu(menueList, addCampaign.CreateCampaign, removeCampaign.DeleteCampaign, MainMenu.DisplayMenu);
 
             Console.ReadKey();
         }

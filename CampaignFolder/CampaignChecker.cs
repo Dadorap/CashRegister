@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CashRegister.CampaignFolder
+namespace CashRegisterSystem.CampaignFolder
 {
     public class CampaignChecker
     {
-        public static decimal GetPrice(int plu)
+        public decimal GetPrice(int plu)
         {
             var campList = GetCampaign.GetCamp();
             var date = DateOnly.Parse(DateTime.Now.ToString("yyyy-MM-dd"));

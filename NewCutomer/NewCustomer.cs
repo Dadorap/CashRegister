@@ -1,24 +1,26 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using CashRegister.ReceiptFolder;
-using CashRegister.Product;
-using CashRegister.MenuFolder;
-using CashRegister.AdminFolder.Display;
-using CashRegister.ErrorMesg;
+using CashRegisterSystem.ReceiptFolder;
+using CashRegisterSystem.Product;
+using CashRegisterSystem.MenuFolder;
+using CashRegisterSystem.AdminFolder.Display;
+using CashRegisterSystem.ErrorMesg;
 
 
-namespace CashRegister.NewCutomer
+namespace CashRegisterSystem.NewCutomer
 {
     public class NewCustomer
     {
 
-        public static void Kassa()
+        public void CashRegister()
         {
+            DisplayProductRight displayProduct = new DisplayProductRight(35);
             List<Products> productsList = ProdInfoReader.ReadProducts();
             CustormerShopping cart = new CustormerShopping();
             ErrorMessage errFormat = new ErrorMessage("The input format is invalid.");
             ErrorMessage errOvFlow = new ErrorMessage("Value is too large.");
+            AddReceipt addReceipt = new AddReceipt();
 
             while (true)
             {
@@ -35,7 +37,7 @@ namespace CashRegister.NewCutomer
                     decimal total = 0;
 
                     // this shows product name and its ID on the right side of the console
-                    DisplayProductRight.DisplayProduct();
+                    displayProduct.DisplayProduct();
 
 
                     Console.SetCursorPosition(0, 1);
@@ -60,7 +62,7 @@ namespace CashRegister.NewCutomer
 
                     if (userInput == "pay" && receipts.Count > 0)
                     {
-                        AddReceipt.AddReceipts(receipts, total);
+                        addReceipt.AddReceipts(receipts, total);
                         //Console.WriteLine("Thank you come again!");
                         //Console.WriteLine("press any key to return to the menue...");
                         //Console.ReadKey();

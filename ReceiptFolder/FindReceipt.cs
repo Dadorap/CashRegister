@@ -1,17 +1,17 @@
-﻿using CashRegister.MenuFolder;
-using CashRegister.AdminFolder;
-using CashRegister.NewCutomer;
+﻿using CashRegisterSystem.MenuFolder;
+using CashRegisterSystem.AdminFolder;
+using CashRegisterSystem.NewCutomer;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CashRegister.ReceiptFolder
+namespace CashRegisterSystem.ReceiptFolder
 {
-    public class ReadReceipt
+    public class FindReceipt
     {
-        public static void DisplayReceipt(string path, int orderNumber)
+        public void DisplayReceipt(string path, int orderNumber)
         {
             Console.Clear();
             string searchOrderNumber = "ORDER NUMBER:\t" + orderNumber;
