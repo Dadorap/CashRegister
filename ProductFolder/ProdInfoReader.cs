@@ -11,7 +11,7 @@ namespace CashRegisterSystem.Product
     public class ProdInfoReader
     {
         // Read and store procuts to Products class and return products list
-        public static List<Products> ReadProducts()
+        public List<Products> ReadProducts()
         {
             Console.ForegroundColor = ConsoleColor.Cyan;
             List<Products> products = new List<Products>();

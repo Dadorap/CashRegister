@@ -15,8 +15,8 @@ namespace CashRegisterSystem.NewCutomer
 
         public void CashRegister()
         {
+            var prodList = new ProdInfoReader().ReadProducts();
             DisplayProductRight displayProduct = new DisplayProductRight(35);
-            List<Products> productsList = ProdInfoReader.ReadProducts();
             CustormerShopping cart = new CustormerShopping();
             ErrorMessage errFormat = new ErrorMessage("The input format is invalid.");
             ErrorMessage errOvFlow = new ErrorMessage("Value is too large.");

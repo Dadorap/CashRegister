@@ -10,7 +10,7 @@ namespace CashRegisterSystem.CampaignFolder
     {
         public decimal GetPrice(int plu)
         {
-            var campList = GetCampaign.GetCamp();
+            var campList = new GetCampaign().GetCamp();
             var date = DateOnly.Parse(DateTime.Now.ToString("yyyy-MM-dd"));
 
             foreach (var camp in campList)

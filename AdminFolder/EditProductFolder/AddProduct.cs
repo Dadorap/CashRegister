@@ -18,7 +18,7 @@ namespace CashRegisterSystem.AdminFolder.EditProductFolder
         public void AddPorductToList()
         {
             string filePath = "../../../Files/Products.txt";
-            var prodList = ProdInfoReader.ReadProducts();
+            var prodList = new ProdInfoReader().ReadProducts();
             DisplayProductRight displayProduct = new DisplayProductRight(35);
             ErrorMessage errId = new ErrorMessage("Invalid input");
             EditProductMenu menu = new EditProductMenu();

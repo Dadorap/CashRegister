@@ -16,9 +16,9 @@ namespace CashRegisterSystem.AdminFolder.PromotionalFolder
         public void DeleteCampaign()
         {
             string campPath = "../../../Files/Campaign.txt";
+            var campList = new GetCampaign().GetCamp();
             ErrorMessage errId = new ErrorMessage("Invalid input.");
             DisplayCampaignRight displayCampaignRight = new DisplayCampaignRight();
-            var campList = GetCampaign.GetCamp();
             MainMenu mainMenu = new MainMenu();
 
 

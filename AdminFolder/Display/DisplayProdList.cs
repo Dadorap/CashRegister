@@ -12,13 +12,15 @@ namespace CashRegisterSystem.AdminFolder.Display
         public void DisplayAllProd()
         {
             Console.Clear();
-            List<Products> productsList = ProdInfoReader.ReadProducts();
+            //List<Products> productsList = ProdInfoReader.ReadProducts();
+            var prodList = new ProdInfoReader().ReadProducts();
+
             int i = 0;
             Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine("Product list");
             Console.WriteLine("PLU-Name-Price-Unit");
 
-            foreach (Products product in productsList)
+            foreach (Products product in prodList)
             {
                 if (i % 2 == 0)
                 {

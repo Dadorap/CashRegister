@@ -16,7 +16,7 @@ namespace CashRegisterSystem.AdminFolder.EditProductFolder
         public void DeleteProdcutFromList()
         {
             string path = "../../../Files/Products.txt";
-            var prodList = ProdInfoReader.ReadProducts();
+            var prodList = new ProdInfoReader().ReadProducts();
             EditProductMenu menu = new EditProductMenu();
             ErrorMessage errPlu = new ErrorMessage("The provided PLU was not found.\nPlease check the input and try again.");
             DisplayProductRight displayProduct = new DisplayProductRight(35);

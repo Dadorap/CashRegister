@@ -16,8 +16,7 @@ namespace CashRegisterSystem.NewCutomer
         private List<Receipt> prodRec = new List<Receipt>();
         public void Addshopping(string userInput)
         {
-
-            List<Products> productsList = ProdInfoReader.ReadProducts();
+            var prodList = new ProdInfoReader().ReadProducts();
             string campPath = "../../../Files/Campaign.txt";
             string[] userInputParts = userInput.Split(" ");
             CampaignChecker campaignChecker = new CampaignChecker();
@@ -32,13 +31,13 @@ namespace CashRegisterSystem.NewCutomer
 
 
 
-            for (int i = 0; i < productsList.Count; i++)
+            for (int i = 0; i < prodList.Count; i++)
             {
-                if (productsList[i].PLU == prodId)
+                if (prodList[i].PLU == prodId)
                 {
-                    decimal price = productsList[i].ProdPrice * priceDiscount;
+                    decimal price = prodList[i].ProdPrice * priceDiscount;
                     decimal total =Math.Round(prodAmount * price, 2);
-                    Receipt receipt = new Receipt(productsList[i].ProdName, prodAmount, Math.Round(price,2), productsList[i].UnitType, total);
+                    Receipt receipt = new Receipt(prodList[i].ProdName, prodAmount, Math.Round(price,2), prodList[i].UnitType, total);
                     prodRec.Add(receipt);
 
                 }

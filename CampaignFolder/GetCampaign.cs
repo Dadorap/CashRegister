@@ -8,7 +8,7 @@ namespace CashRegisterSystem.CampaignFolder
 {
     public class GetCampaign
     {
-        public static List<Campaign> GetCamp()
+        public List<Campaign> GetCamp()
         {
             string path = "../../../Files/Campaign.txt";
             var campList = new List<Campaign>();

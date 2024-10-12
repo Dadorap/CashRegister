@@ -15,11 +15,11 @@ namespace CashRegisterSystem.AdminFolder.PromotionalFolder
         public void CreateCampaign()
         {
             string campPath = "../../../Files/Campaign.txt";
+            var campList = new GetCampaign().GetCamp();
             DisplayCampaignRight displayCampaignRight = new DisplayCampaignRight();
             DisplayProductRight displayProduct = new DisplayProductRight(36);
             Promotional promotional = new Promotional();
-            var campList = GetCampaign.GetCamp();
-            var prodList = ProdInfoReader.ReadProducts();
+            var prodList = new ProdInfoReader().ReadProducts();
             ErrorMessage campErr = new ErrorMessage("Invalid input. Please enter a 4-digit number.");
             ErrorMessage pluErr = new ErrorMessage("Invalid input. Please enter a 3-digit number.");
             ErrorMessage pluExistErr = new ErrorMessage("PLU does not exist! Try again");
@@ -43,6 +43,7 @@ namespace CashRegisterSystem.AdminFolder.PromotionalFolder
                     Console.ForegroundColor = ConsoleColor.Green;
                     Console.WriteLine("Creat New Campaign");
                     Console.ResetColor();
+                    Console.ForegroundColor= ConsoleColor.Blue;
                     Console.WriteLine("Enter unique campaign ID (4-digit): ");
                     if (int.TryParse(Console.ReadLine(), out int campId) && Math.Abs(campId).ToString().Length == 4)
                     {
@@ -61,7 +62,7 @@ namespace CashRegisterSystem.AdminFolder.PromotionalFolder
 
                         if (idExist)
                         {
-                            continue;  
+                            continue;
                         }
                         Console.Write("Enter products plu: ");
                         if (int.TryParse(Console.ReadLine(), out int prodPlu) && Math.Abs(prodPlu).ToString().Length == 3)
@@ -113,7 +114,7 @@ namespace CashRegisterSystem.AdminFolder.PromotionalFolder
                                 else
                                 {
                                     disErr.ErrorMsg();
-                                   
+
 
                                 }
                             }
@@ -133,7 +134,7 @@ namespace CashRegisterSystem.AdminFolder.PromotionalFolder
                     }
                     else
                     {
-                        campErr.ErrorMsg();                       
+                        campErr.ErrorMsg();
                     }
 
 
