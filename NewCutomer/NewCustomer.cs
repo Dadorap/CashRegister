@@ -17,10 +17,10 @@ namespace CashRegisterSystem.NewCutomer
         {
             var prodList = new ProdInfoReader().ReadProducts();
             DisplayProductRight displayProduct = new DisplayProductRight(35);
-            CustormerShopping cart = new CustormerShopping();
+            CustomerShopping cart = new CustomerShopping();
             ErrorMessage errFormat = new ErrorMessage("The input format is invalid.");
             ErrorMessage errOvFlow = new ErrorMessage("Value is too large.");
-            AddReceipt addReceipt = new AddReceipt();
+            ReceiptManager addReceipt = new ReceiptManager();
             MainMenu mainMenu = new MainMenu();
 
             while (true)
@@ -44,7 +44,7 @@ namespace CashRegisterSystem.NewCutomer
                     Console.SetCursorPosition(0, 1);
                     Console.BackgroundColor = ConsoleColor.Red;
                     Console.WriteLine("RECEIPT   " + currentDateTime);
-                    List<Receipt> receipts = cart.GetReceipts();
+                    List<Receipt> receipts = cart.GetReceipt();
                     foreach (Receipt receipt in receipts)
                     {
                         if (receipt.Amount == 0)
@@ -63,7 +63,7 @@ namespace CashRegisterSystem.NewCutomer
 
                     if (userInput == "pay" && receipts.Count > 0)
                     {
-                        addReceipt.AddReceipts(receipts, total);
+                        addReceipt.AddReceipt(receipts, total);
                         break;
                     }
                     else if (userInput == "cancel")
@@ -72,7 +72,7 @@ namespace CashRegisterSystem.NewCutomer
                     }
                     else
                     {
-                        cart.Addshopping(userInput);
+                        cart.AddShopping(userInput);
 
                     }
                 }

@@ -10,11 +10,11 @@ using CashRegisterSystem.CampaignFolder;
 
 namespace CashRegisterSystem.NewCutomer
 {
-    public class CustormerShopping
+    public class CustomerShopping
     {
 
         private List<Receipt> prodRec = new List<Receipt>();
-        public void Addshopping(string userInput)
+        public void AddShopping(string userInput)
         {
             var prodList = new ProdInfoReader().ReadProducts();
             string campPath = "../../../Files/Campaign.txt";
@@ -43,11 +43,9 @@ namespace CashRegisterSystem.NewCutomer
                 }
             }
 
-
-
         }
 
-        public List<Receipt> GetReceipts()
+        public List<Receipt> GetReceipt()
         {
             return prodRec;
         }

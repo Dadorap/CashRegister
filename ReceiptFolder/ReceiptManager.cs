@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace CashRegisterSystem.ReceiptFolder
 {
-    public class AddReceipt
+    public class ReceiptManager
     {
-        public void AddReceipts(List<Receipt> receipt, decimal total)
+        public void AddReceipt(List<Receipt> receipt, decimal total)
         {
             int orderNumber = 4000;
             FindReceipt readReceipt = new FindReceipt();

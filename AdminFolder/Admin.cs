@@ -13,7 +13,7 @@ namespace CashRegisterSystem.AdminFolder
 {
     public class Admin
     {
-        public void AdminMenue()
+        public void AdminMenu()
         {
 
             Console.Clear();

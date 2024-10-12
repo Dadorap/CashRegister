@@ -19,7 +19,7 @@ namespace CashRegisterSystem.MenuFolder
             Admin adminMenu = new Admin();
             Exit exit = new Exit();
             List<string> menuList = new List<string>() { "New Customer", "Admin Tools", "Exit" };
-            menu.DisplayMenu(menuList, newCustomer.CashRegister, adminMenu.AdminMenue, exit.Close);
+            menu.DisplayMenu(menuList, newCustomer.CashRegister, adminMenu.AdminMenu, exit.Close);
         }
     }
 }
