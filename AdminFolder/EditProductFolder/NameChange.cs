@@ -60,7 +60,7 @@ namespace CashRegisterSystem.AdminFolder.EditProductFolder
                                     {
                                         Console.Write($"{parts[1]} Will be changed.\nEnter new product name: ");
                                         string newProdName = Console.ReadLine();
-                                        if (newProdName.Length > 0)
+                                        if (newProdName.Length > 3)
                                         {
                                             parts[1] = newProdName;
                                             state = false;

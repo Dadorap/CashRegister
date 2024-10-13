@@ -32,14 +32,14 @@ namespace CashRegisterSystem.AdminFolder.EditProductFolder
 
                 Console.SetCursorPosition(0, 0);
                 Console.ForegroundColor = ConsoleColor.Green;
-                Console.WriteLine("Add new product");
+                Console.WriteLine("== Remove Product from the List ==");
                 Console.ForegroundColor = ConsoleColor.Blue;
 
 
 
                 Console.Write("Enter PLU code: ");
                 string pluCode = Console.ReadLine();
-                if (int.TryParse(pluCode, out int plu) && Math.Abs(plu).ToString().Length == 3)
+                if (int.TryParse(pluCode, out int plu) && Math.Abs(plu).ToString().Length == 4)
                 {
                     bool pluFound = false;
                     foreach (var p in prodList)

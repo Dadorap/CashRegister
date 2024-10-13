@@ -41,7 +41,7 @@ namespace CashRegisterSystem.AdminFolder.EditProductFolder
                     Console.WriteLine("Add new product");
                     Console.ForegroundColor = ConsoleColor.Blue;
                     Console.Write("Enter the PLU code: ");
-                    if (int.TryParse(Console.ReadLine(), out int prodId) && Math.Abs(prodId).ToString().Length == 3)
+                    if (int.TryParse(Console.ReadLine(), out int prodId) && Math.Abs(prodId).ToString().Length == 4)
                     {
                         foreach (var item in prodList)
                         {
@@ -90,11 +90,14 @@ namespace CashRegisterSystem.AdminFolder.EditProductFolder
                                     mySteam.WriteLine(prodInfo);
                                 }
                             }
+                            Console.Clear() ;
+                            Console.ForegroundColor = ConsoleColor.Green;
+                            Console.WriteLine($"New product '{prodName}' (PLU: {prodId}) has been added to the list.");
+                            Console.ResetColor();
+                            Console.Write("Press any key to return to edit menu...");
+                            Console.ReadKey();
+                            menu.EditProductsMenu();
                         }
-                        Console.ResetColor();
-                        Console.Write("Press any key to return to edit menu...");
-                        Console.ReadKey();
-                        menu.EditProductsMenu();
                     }
                     else
                     {

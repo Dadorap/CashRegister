@@ -21,6 +21,8 @@ namespace CashRegisterSystem.AdminFolder.EditProductFolder
             ErrorMessage errOvFlow = new ErrorMessage("Value is too large.");
             DisplayProductRight displayProduct = new DisplayProductRight(40);
             EditProductMenu menu = new EditProductMenu();
+            int minPrice = 0;
+            int maxPrice = 100000;
 
 
             while (true)
@@ -59,24 +61,29 @@ namespace CashRegisterSystem.AdminFolder.EditProductFolder
                                     while (state)
                                     {
                                         Console.Write($"{parts[2]} Will be changed.\nEnter new product price(00,00): ");
-                                        //string newProdPrice = Console.ReadLine();
-                                        if (decimal.TryParse(Console.ReadLine(), out decimal newProdPrice) && newProdPrice > 0)
+
+                                        if (decimal.TryParse(Console.ReadLine(), out decimal newProdPrice) && newProdPrice > minPrice && newProdPrice < maxPrice)
                                         {
 
-                                            parts[2] = Math.Round(Math.Abs(Convert.ToDecimal(newProdPrice)), 2, MidpointRounding.ToZero).ToString();
+
+                                            parts[2] = newProdPrice.ToString();
                                             state = false;
 
                                         }
 
                                         else
                                         {
+                                            Console.ForegroundColor = ConsoleColor.Red;
+                                            Console.WriteLine("Invalid input try again...");
+                                            Console.ForegroundColor = ConsoleColor.Blue;
+                                            Console.WriteLine();
                                             continue;
                                         }
                                     }
                                 }
                                 int plu = Convert.ToInt32(parts[0]);
                                 string prodName = parts[1];
-                                decimal price = Convert.ToDecimal(parts[2]);
+                                decimal price = Math.Round(Convert.ToDecimal(parts[2]), 2, MidpointRounding.ToZero);
                                 UnitType unitType = (UnitType)Enum.Parse(typeof(UnitType), parts[3]);
 
 
