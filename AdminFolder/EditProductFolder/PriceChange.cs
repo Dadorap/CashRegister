@@ -116,11 +116,10 @@ namespace CashRegisterSystem.AdminFolder.EditProductFolder
                         }
                     }
                     Console.ResetColor();
-                    Console.Write("Press any key to return to edit menu...");
+                    Console.Write("Press any key to return to menu...");
                     Console.ReadKey();
                     mainMenu.DisplayMenu();
 
-                    //menu.EditProductsMenu();
 
                 }
                 catch (OverflowException)

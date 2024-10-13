@@ -59,7 +59,7 @@ namespace CashRegisterSystem.AdminFolder.EditProductFolder
                                     {
                                         Console.Write($"{parts[1]} Will be changed.\nEnter new product name: ");
                                         string newProdName = Console.ReadLine();
-                                        if (newProdName.Length > 3)
+                                        if (newProdName.Length > 2)
                                         {
                                             parts[1] = newProdName;
                                             state = false;
@@ -111,7 +111,7 @@ namespace CashRegisterSystem.AdminFolder.EditProductFolder
 
 
                     Console.ResetColor();
-                    Console.Write("Press any key to return to edit menu...");
+                    Console.Write("Press any key to return to menu...");
                     Console.ReadKey();
                     mainMenu.DisplayMenu();
                 }
