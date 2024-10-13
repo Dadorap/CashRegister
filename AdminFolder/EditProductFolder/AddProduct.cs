@@ -15,7 +15,7 @@ namespace CashRegisterSystem.AdminFolder.EditProductFolder
 {
     public class AddProduct
     {
-        public void AddPorductToList()
+        public void AddProductToList()
         {
             string filePath = "../../../Files/Products.txt";
             var prodList = new ProdInfoReader().ReadProducts();

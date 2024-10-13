@@ -19,7 +19,7 @@ namespace CashRegisterSystem.AdminFolder.PromotionalFolder
             var campList = new GetCampaign().GetCamp();
             ErrorMessage errId = new ErrorMessage("Invalid input.");
             DisplayCampaignRight displayCampaignRight = new DisplayCampaignRight();
-            MainMenu mainMenu = new MainMenu();
+            Promotional promotional = new Promotional();
 
 
 
@@ -57,7 +57,7 @@ namespace CashRegisterSystem.AdminFolder.PromotionalFolder
                     Console.ResetColor();
                     Console.Write("Press any key to return to menu...");
                     Console.ReadKey();
-                    mainMenu.DisplayMenu();
+                    promotional.PromotionalMenue();
                 }
 
                 if (!idExist)

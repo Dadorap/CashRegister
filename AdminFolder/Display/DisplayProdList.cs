@@ -12,7 +12,6 @@ namespace CashRegisterSystem.AdminFolder.Display
         public void DisplayAllProd()
         {
             Console.Clear();
-            //List<Products> productsList = ProdInfoReader.ReadProducts();
             var prodList = new ProdInfoReader().ReadProducts();
 
             int i = 0;
@@ -20,7 +19,7 @@ namespace CashRegisterSystem.AdminFolder.Display
             Console.WriteLine("Product list");
             Console.WriteLine("PLU-Name-Price-Unit");
 
-            foreach (Products product in prodList)
+            foreach (var product in prodList)
             {
                 if (i % 2 == 0)
                 {

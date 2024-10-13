@@ -48,7 +48,7 @@ namespace CashRegisterSystem.AdminFolder.EditProductFolder
                         switch (result)
                         {
                             case 1:
-                                addProduct.AddPorductToList();
+                                addProduct.AddProductToList();
                                 break;
                             case 2:
                                 deleteProduct.DeleteProdcutFromList();                                

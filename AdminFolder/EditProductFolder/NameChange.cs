@@ -21,8 +21,6 @@ namespace CashRegisterSystem.AdminFolder.EditProductFolder
             MainMenu mainMenu = new MainMenu();
 
 
-            // sets every thing below to the left side 
-
             while (true)
             {
 
