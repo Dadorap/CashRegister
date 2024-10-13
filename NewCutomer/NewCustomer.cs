@@ -44,8 +44,8 @@ namespace CashRegisterSystem.NewCutomer
                     Console.SetCursorPosition(0, 1);
                     Console.BackgroundColor = ConsoleColor.Red;
                     Console.WriteLine("RECEIPT   " + currentDateTime);
-                    List<Receipt> receipts = cart.GetReceipt();
-                    foreach (Receipt receipt in receipts)
+                    var receipts = cart.GetReceipt();
+                    foreach (var receipt in receipts)
                     {
                         if (receipt.Amount == 0)
                         {

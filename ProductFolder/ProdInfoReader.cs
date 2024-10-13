@@ -22,18 +22,15 @@ namespace CashRegisterSystem.Product
                 // Split the line by spaces
                 string[] parts = line.Split(" ");
 
-                // Check if we have the expected number of parts (4 in this case: id, name, price, type)
                 if (parts.Length == 4)
                 {
-                    // Try to parse the id
                     if (int.TryParse(parts[0], out int id) &&
-                        decimal.TryParse(parts[2], out decimal price)) // Parse price
+                        decimal.TryParse(parts[2], out decimal price)) 
                     {
                         string name = parts[1];
                         UnitType unitType = (UnitType)Enum.Parse(typeof(UnitType), parts[3]);
 
 
-                        // Create the product and add it to the list
                         Products product = new Products(id, name, price, unitType);
                         products.Add(product);
                     }
