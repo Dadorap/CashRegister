@@ -16,10 +16,9 @@ namespace CashRegisterSystem.AdminFolder.EditProductFolder
         public void ChangeProdName()
         {
             string path = "../../../Files/Products.txt";
-            // displays product list to the right of side 
             ErrorMessage errPlu = new ErrorMessage("The provided PLU was not found.\nPlease check the input and try again.");
             DisplayProductRight displayProduct = new DisplayProductRight(35);
-            EditProductMenu menu = new EditProductMenu();
+            MainMenu mainMenu = new MainMenu();
 
 
             // sets every thing below to the left side 
@@ -64,6 +63,8 @@ namespace CashRegisterSystem.AdminFolder.EditProductFolder
                                         {
                                             parts[1] = newProdName;
                                             state = false;
+                                            break;
+
                                         }
                                         else
                                         {
@@ -72,7 +73,7 @@ namespace CashRegisterSystem.AdminFolder.EditProductFolder
                                     }
                                 }
                                 int plu = Convert.ToInt32(parts[0]);
-                                string prodName = parts[1];
+                                string prodName = parts[1].Replace(" ", "").Trim();
                                 decimal price = Convert.ToDecimal(parts[2]);
                                 UnitType unitType = (UnitType)Enum.Parse(typeof(UnitType), parts[3]);
 
@@ -112,8 +113,7 @@ namespace CashRegisterSystem.AdminFolder.EditProductFolder
                     Console.ResetColor();
                     Console.Write("Press any key to return to edit menu...");
                     Console.ReadKey();
-                    menu.EditProductsMenu();
-
+                    mainMenu.DisplayMenu();
                 }
                 catch (Exception ex)
                 {

@@ -21,7 +21,7 @@ namespace CashRegisterSystem.AdminFolder.EditProductFolder
             var prodList = new ProdInfoReader().ReadProducts();
             DisplayProductRight displayProduct = new DisplayProductRight(35);
             ErrorMessage errId = new ErrorMessage("Invalid input");
-            EditProductMenu menu = new EditProductMenu();
+            MainMenu menu = new MainMenu();
             bool state = true;
 
             while (state)
@@ -64,7 +64,7 @@ namespace CashRegisterSystem.AdminFolder.EditProductFolder
                         if (!idExist)
                         {
                             Console.Write("Product name: ");
-                            string prodName = Console.ReadLine();
+                            string prodName = Console.ReadLine().Replace(" ", "").Trim();
                             if (int.TryParse(prodName, out int num) || prodName.Contains(" "))
                             {
                                 isDigit = true;
@@ -94,9 +94,9 @@ namespace CashRegisterSystem.AdminFolder.EditProductFolder
                             Console.ForegroundColor = ConsoleColor.Green;
                             Console.WriteLine($"New product '{prodName}' (PLU: {prodId}) has been added to the list.");
                             Console.ResetColor();
-                            Console.Write("Press any key to return to edit menu...");
+                            Console.Write("Press any key to return to menu...");
                             Console.ReadKey();
-                            menu.EditProductsMenu();
+                            menu.DisplayMenu();
                         }
                     }
                     else

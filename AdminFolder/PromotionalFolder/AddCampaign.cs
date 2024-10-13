@@ -20,8 +20,7 @@ namespace CashRegisterSystem.AdminFolder.PromotionalFolder
             DisplayProductRight displayProduct = new DisplayProductRight(36);
             Promotional promotional = new Promotional();
             var prodList = new ProdInfoReader().ReadProducts();
-            ErrorMessage campErr = new ErrorMessage("Invalid input. Please enter a 4-digit number.");
-            ErrorMessage pluErr = new ErrorMessage("Invalid input. Please enter a 3-digit number.");
+            ErrorMessage inputErr = new ErrorMessage("Invalid input. Please enter a 4-digit number.");
             ErrorMessage pluExistErr = new ErrorMessage("PLU does not exist! Try again");
             ErrorMessage formatErr = new ErrorMessage("Please use the correct format.");
             ErrorMessage disErr = new ErrorMessage("Please enter a number between 1-100.");
@@ -65,7 +64,7 @@ namespace CashRegisterSystem.AdminFolder.PromotionalFolder
                             continue;
                         }
                         Console.Write("Enter products plu: ");
-                        if (int.TryParse(Console.ReadLine(), out int prodPlu) && Math.Abs(prodPlu).ToString().Length == 3)
+                        if (int.TryParse(Console.ReadLine(), out int prodPlu) && Math.Abs(prodPlu).ToString().Length == 4)
                         {
                             foreach (var prod in prodList)
                             {
@@ -127,14 +126,14 @@ namespace CashRegisterSystem.AdminFolder.PromotionalFolder
                         }
                         else
                         {
-                            pluErr.ErrorMsg();
+                            inputErr.ErrorMsg();
                         }
 
 
                     }
                     else
                     {
-                        campErr.ErrorMsg();
+                        inputErr.ErrorMsg();
                     }
 
 

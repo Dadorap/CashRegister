@@ -20,7 +20,7 @@ namespace CashRegisterSystem.AdminFolder.EditProductFolder
             ErrorMessage errFormat = new ErrorMessage("The input format is invalid.");
             ErrorMessage errOvFlow = new ErrorMessage("Value is too large.");
             DisplayProductRight displayProduct = new DisplayProductRight(40);
-            EditProductMenu menu = new EditProductMenu();
+            MainMenu mainMenu = new MainMenu();
             int minPrice = 0;
             int maxPrice = 100000;
 
@@ -68,7 +68,7 @@ namespace CashRegisterSystem.AdminFolder.EditProductFolder
 
                                             parts[2] = newProdPrice.ToString();
                                             state = false;
-
+                                            break;
                                         }
 
                                         else
@@ -118,7 +118,9 @@ namespace CashRegisterSystem.AdminFolder.EditProductFolder
                     Console.ResetColor();
                     Console.Write("Press any key to return to edit menu...");
                     Console.ReadKey();
-                    menu.EditProductsMenu();
+                    mainMenu.DisplayMenu();
+
+                    //menu.EditProductsMenu();
 
                 }
                 catch (OverflowException)

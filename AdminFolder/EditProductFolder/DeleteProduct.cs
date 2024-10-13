@@ -17,7 +17,7 @@ namespace CashRegisterSystem.AdminFolder.EditProductFolder
         {
             string path = "../../../Files/Products.txt";
             var prodList = new ProdInfoReader().ReadProducts();
-            EditProductMenu menu = new EditProductMenu();
+            MainMenu menu = new MainMenu();
             ErrorMessage errPlu = new ErrorMessage("The provided PLU was not found.\nPlease check the input and try again.");
             DisplayProductRight displayProduct = new DisplayProductRight(35);
 
@@ -67,9 +67,9 @@ namespace CashRegisterSystem.AdminFolder.EditProductFolder
                         Console.ForegroundColor = ConsoleColor.DarkRed;
                         Console.WriteLine("Product with PLU code " + pluCode + " has been removed.");
                         Console.ResetColor();
-                        Console.Write("Press any key to return to edit menu...");
+                        Console.Write("Press any key to return to menu...");
                         Console.ReadKey();
-                        menu.EditProductsMenu();
+                        menu.DisplayMenu();
                     }
 
                 }
