@@ -1,7 +1,11 @@
-﻿using CashRegisterSystem.ErrorMesg;
+﻿using CashRegisterSystem.AdminFolder.PromotionalFolder;
+using CashRegisterSystem.ErrorMesg;
+using CashRegisterSystem.Interface;
+using CashRegisterSystem.MenuFolder;
 using CashRegisterSystem.ReceiptFolder;
 using System;
 using System.Collections.Generic;
+using System.Formats.Tar;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,16 +16,26 @@ namespace CashRegisterSystem.AdminFolder.Receipt
     {
         public void GetReceiptById()
         {
+            string path = "../../../Files/OrderNumber.txt";
             ErrorMessage recErr = new ErrorMessage("Invalid receipt number. \nPlease enter a 4-digit number.");
             ErrorMessage idErr = new ErrorMessage("Receipt number not found. \nPlease verify the number and try again.");
+            ErrorMessage errFile = new ErrorMessage("File is empty/does not exist");
             FindReceipt readReceipt = new FindReceipt();
+            IMainMenu mainMenu = new MainMenu();
+
+            if (!File.Exists(path) || string.IsNullOrEmpty(File.ReadAllText(path)))
+            {
+                errFile.ErrorMsg();
+                mainMenu.DisplayMenu();
+
+            }
+
             while (true)
             {
                 Console.Clear();
                 try
                 {
                     int horizantal = 40;
-                    string path = "../../../Files/OrderNumber.txt";
                     List<string> list = new List<string>();
                     List<int> campId = new List<int>();
 

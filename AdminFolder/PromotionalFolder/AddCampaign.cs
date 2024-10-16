@@ -24,9 +24,32 @@ namespace CashRegisterSystem.AdminFolder.PromotionalFolder
             ErrorMessage pluExistErr = new ErrorMessage("PLU does not exist! Try again");
             ErrorMessage formatErr = new ErrorMessage("Please use the correct format.");
             ErrorMessage disErr = new ErrorMessage("Please enter a number between 1-100.");
+            ErrorMessage errFile = new ErrorMessage("Product file is empty/does not exist");
 
 
-            while (true)
+            bool fileExist = false;
+
+            if (!File.Exists(campPath))
+            {
+                using (FileStream fs = File.Create(campPath))
+
+                    fileExist = true;
+            }
+
+            if (prodList.Count > 0)
+            {
+
+                fileExist = true;
+            }
+            else
+            {
+                errFile.ErrorMsg();
+                promotional.PromotionalMenue();
+            }
+
+
+
+            while (fileExist)
             {
                 Console.Clear();
                 displayCampaignRight.DisplayCampaign(60);
@@ -42,7 +65,7 @@ namespace CashRegisterSystem.AdminFolder.PromotionalFolder
                     Console.ForegroundColor = ConsoleColor.Green;
                     Console.WriteLine("Creat New Campaign");
                     Console.ResetColor();
-                    Console.ForegroundColor= ConsoleColor.Blue;
+                    Console.ForegroundColor = ConsoleColor.Blue;
                     Console.WriteLine("Enter unique campaign ID (4-digit): ");
                     if (int.TryParse(Console.ReadLine(), out int campId) && Math.Abs(campId).ToString().Length == 4)
                     {
@@ -145,6 +168,7 @@ namespace CashRegisterSystem.AdminFolder.PromotionalFolder
                 catch (Exception ex)
                 {
                     Console.Clear();
+                    Console.ForegroundColor = ConsoleColor.Red;
                     Console.WriteLine(ex.Message);
                     Console.ReadKey();
                 }

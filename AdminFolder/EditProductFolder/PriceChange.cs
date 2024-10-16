@@ -19,10 +19,19 @@ namespace CashRegisterSystem.AdminFolder.EditProductFolder
             ErrorMessage errInput = new ErrorMessage("Invalid input. Try again.");
             ErrorMessage errFormat = new ErrorMessage("The input format is invalid.");
             ErrorMessage errOvFlow = new ErrorMessage("Value is too large.");
+            ErrorMessage errFile = new ErrorMessage("Product file is empty/does not exist");
             DisplayProductRight displayProduct = new DisplayProductRight(40);
             MainMenu mainMenu = new MainMenu();
             int minPrice = 0;
             int maxPrice = 100000;
+
+
+            if (!File.Exists(path) || string.IsNullOrEmpty(File.ReadAllText(path)))
+            {
+                errFile.ErrorMsg();
+                mainMenu.DisplayMenu();
+
+            }
 
 
             while (true)

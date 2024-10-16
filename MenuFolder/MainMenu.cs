@@ -7,10 +7,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using CashRegisterSystem.Product;
+using CashRegisterSystem.Interface;
 
 namespace CashRegisterSystem.MenuFolder
 {
-    public class MainMenu
+    public class MainMenu : IMainMenu
     {
         public void DisplayMenu()
         {
@@ -21,5 +22,6 @@ namespace CashRegisterSystem.MenuFolder
             List<string> menuList = new List<string>() { "New Customer", "Admin Tools", "Exit" };
             menu.DisplayMenu(menuList, newCustomer.CashRegister, adminMenu.AdminMenu, exit.Close);
         }
+
     }
 }

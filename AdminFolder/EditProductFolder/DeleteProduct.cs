@@ -19,7 +19,20 @@ namespace CashRegisterSystem.AdminFolder.EditProductFolder
             var prodList = new ProdInfoReader().ReadProducts();
             MainMenu menu = new MainMenu();
             ErrorMessage errPlu = new ErrorMessage("The provided PLU was not found.\nPlease check the input and try again.");
+            ErrorMessage errFile = new ErrorMessage("Product file is empty/does not exist");
             DisplayProductRight displayProduct = new DisplayProductRight(35);
+
+            bool state = false;
+
+            if (prodList.Count > 0)
+            {
+                state = true;
+            }
+            else
+            {
+                errFile.ErrorMsg();
+                menu.DisplayMenu();
+            }
 
 
             while (true)

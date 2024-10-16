@@ -4,18 +4,16 @@ __________________________
      Tel:0611-525252
 	HÄRNÖSAND
 -------------------------
-PRODUCTS	 PRICE
+PRODUCTS	PRICE
 
-kött
-  2kg*79	158
-Banan
-  2kg*14,50	29,00
-kyckling
-  5kg*85	425
--------------------------
-TOTAL:		612,00
-ORDER NUMBER:	4045
-2024/10/06	20:48
+ CD
+  20pc*10,00	200,00
+ Banan
+  10kg*13,65	136,50
+ -------------------------
+TOTAL:		336,50
+ORDER NUMBER:	4000
+2024/10/16	17:31
 -------------------------
     THANKS FOR THE VISIT
 	WELCOME BACK

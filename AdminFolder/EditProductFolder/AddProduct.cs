@@ -18,13 +18,30 @@ namespace CashRegisterSystem.AdminFolder.EditProductFolder
         public void AddProductToList()
         {
             string filePath = "../../../Files/Products.txt";
+            var errId = new ErrorMessage("Invalid input");
+            var displayProduct = new DisplayProductRight(35);
             var prodList = new ProdInfoReader().ReadProducts();
-            DisplayProductRight displayProduct = new DisplayProductRight(35);
-            ErrorMessage errId = new ErrorMessage("Invalid input");
-            MainMenu menu = new MainMenu();
-            bool state = true;
+            IMainMenu menu = new MainMenu();
 
-            while (state)
+            bool fileExist = false;
+
+            if (!File.Exists(filePath))
+            {
+                using (FileStream fs = File.Create(filePath))
+                {
+                    fileExist = true;
+                }
+            }
+            else
+            {
+                fileExist = true;
+            }
+
+
+            
+
+
+            while (fileExist)
             {
                 try
                 {
@@ -40,7 +57,7 @@ namespace CashRegisterSystem.AdminFolder.EditProductFolder
                     Console.SetCursorPosition(0, 0);
                     Console.WriteLine("Add new product");
                     Console.ForegroundColor = ConsoleColor.Blue;
-                    Console.Write("Enter the PLU code: ");
+                    Console.Write("Enter the PLU code (4-digit): ");
                     if (int.TryParse(Console.ReadLine(), out int prodId) && Math.Abs(prodId).ToString().Length == 4)
                     {
                         foreach (var item in prodList)
@@ -90,7 +107,7 @@ namespace CashRegisterSystem.AdminFolder.EditProductFolder
                                     mySteam.WriteLine(prodInfo);
                                 }
                             }
-                            Console.Clear() ;
+                            Console.Clear();
                             Console.ForegroundColor = ConsoleColor.Green;
                             Console.WriteLine($"New product '{prodName}' (PLU: {prodId}) has been added to the list.");
                             Console.ResetColor();

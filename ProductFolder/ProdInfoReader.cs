@@ -5,6 +5,10 @@ using System.IO;
 using System.Text;
 using System.Threading.Tasks;
 using CashRegisterSystem.Interface;
+using CashRegisterSystem.ErrorMesg;
+using CashRegisterSystem.MenuFolder;
+using System.Diagnostics;
+using System.Xml.Linq;
 
 namespace CashRegisterSystem.Product
 {
@@ -14,34 +18,39 @@ namespace CashRegisterSystem.Product
         public List<Products> ReadProducts()
         {
             Console.ForegroundColor = ConsoleColor.Cyan;
-            List<Products> products = new List<Products>();
+            var products = new List<Products>();
             string filePath = "../../../Files/Products.txt";
 
-            foreach (string line in File.ReadLines(filePath))
+
+            if (File.Exists(filePath))
             {
-                // Split the line by spaces
-                string[] parts = line.Split(" ");
 
-                if (parts.Length == 4)
+                foreach (string line in File.ReadLines(filePath))
                 {
-                    if (int.TryParse(parts[0], out int id) &&
-                        decimal.TryParse(parts[2], out decimal price)) 
+                    // Split the line by spaces
+                    string[] parts = line.Split(" ");
+
+                    if (parts.Length == 4)
                     {
-                        string name = parts[1];
-                        UnitType unitType = (UnitType)Enum.Parse(typeof(UnitType), parts[3]);
+                        if (int.TryParse(parts[0], out int id) &&
+                            decimal.TryParse(parts[2], out decimal price))
+                        {
+                            string name = parts[1];
+                            UnitType unitType = (UnitType)Enum.Parse(typeof(UnitType), parts[3]);
 
 
-                        Products product = new Products(id, name, price, unitType);
-                        products.Add(product);
+                            Products product = new Products(id, name, price, unitType);
+                            products.Add(product);
+                        }
+                        else
+                        {
+                            Console.WriteLine($"Error parsing line: {line}");
+                        }
                     }
                     else
                     {
-                        Console.WriteLine($"Error parsing line: {line}");
+                        Console.WriteLine($"Invalid format in line: {line}");
                     }
-                }
-                else
-                {
-                    Console.WriteLine($"Invalid format in line: {line}");
                 }
             }
 

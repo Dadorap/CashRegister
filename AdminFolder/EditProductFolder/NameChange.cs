@@ -5,6 +5,7 @@ using CashRegisterSystem.MenuFolder;
 using CashRegisterSystem.Product;
 using System;
 using System.Collections.Generic;
+using System.Formats.Tar;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,6 +20,14 @@ namespace CashRegisterSystem.AdminFolder.EditProductFolder
             ErrorMessage errPlu = new ErrorMessage("The provided PLU was not found.\nPlease check the input and try again.");
             DisplayProductRight displayProduct = new DisplayProductRight(35);
             MainMenu mainMenu = new MainMenu();
+            ErrorMessage errFile = new ErrorMessage("Product file is empty/does not exist");
+
+            if (!File.Exists(path) || string.IsNullOrEmpty(File.ReadAllText(path)))
+            {
+                errFile.ErrorMsg();
+                mainMenu.DisplayMenu();
+
+            }
 
 
             while (true)

@@ -18,8 +18,15 @@ namespace CashRegisterSystem.AdminFolder.PromotionalFolder
             string campPath = "../../../Files/Campaign.txt";
             var campList = new GetCampaign().GetCamp();
             ErrorMessage errId = new ErrorMessage("Invalid input.");
+            ErrorMessage errFile = new ErrorMessage("File is empty/does not exist");
             DisplayCampaignRight displayCampaignRight = new DisplayCampaignRight();
             Promotional promotional = new Promotional();
+
+            if (!File.Exists(campPath) || string.IsNullOrEmpty( File.ReadAllText(campPath)))
+            {
+                errFile.ErrorMsg();
+                promotional.PromotionalMenue();
+            }
 
 
 
@@ -33,6 +40,7 @@ namespace CashRegisterSystem.AdminFolder.PromotionalFolder
                 Console.WriteLine("Remove a Campaign");
                 Console.ForegroundColor = ConsoleColor.Blue;
                 Console.Write("Enter campaign id: ");
+
 
                 if (int.TryParse(Console.ReadLine(), out int inputId) && Math.Abs(inputId).ToString().Length == 4)
                 {

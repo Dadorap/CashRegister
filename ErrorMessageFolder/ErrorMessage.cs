@@ -21,7 +21,7 @@ namespace CashRegisterSystem.ErrorMesg
             Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine(ErrMsg);
             Console.ResetColor();
-            Console.Write("Press any key to return...");
+            Console.Write("Press any key to return to menu...");
             Console.ReadKey();
         }
     }
