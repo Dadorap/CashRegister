@@ -163,7 +163,7 @@ namespace CashRegisterSystem.AdminFolder.PromotionalFolder
                 }
                 catch (FormatException)
                 {
-                    formatErr.ErrorMsg();
+                    formatErr.ErrorMsg("back");
                 }
                 catch (Exception ex)
                 {

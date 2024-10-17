@@ -70,7 +70,7 @@ namespace CashRegisterSystem.AdminFolder.PromotionalFolder
 
                 if (!idExist)
                 {
-                    errId.ErrorMsg();
+                    errId.ErrorMsg("back");
                 }
             }
         }

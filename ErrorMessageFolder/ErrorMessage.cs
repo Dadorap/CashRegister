@@ -15,13 +15,13 @@ namespace CashRegisterSystem.ErrorMesg
             ErrMsg = _msg;
         }
 
-        public void ErrorMsg()
+        public void ErrorMsg(string msg = "menu")
         {
             Console.Clear();
             Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine(ErrMsg);
             Console.ResetColor();
-            Console.Write("Press any key to return to menu...");
+            Console.Write($"Press any key to return {msg}...");
             Console.ReadKey();
         }
     }

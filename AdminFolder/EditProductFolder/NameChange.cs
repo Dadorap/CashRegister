@@ -91,7 +91,7 @@ namespace CashRegisterSystem.AdminFolder.EditProductFolder
                         }
                         else
                         {
-                            errPlu.ErrorMsg();
+                            errPlu.ErrorMsg("back");
 
                             continue;
 

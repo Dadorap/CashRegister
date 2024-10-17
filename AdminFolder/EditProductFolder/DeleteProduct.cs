@@ -66,7 +66,7 @@ namespace CashRegisterSystem.AdminFolder.EditProductFolder
 
                     if (!pluFound)
                     {
-                        errPlu.ErrorMsg();
+                        errPlu.ErrorMsg("back");
                     }
 
 
@@ -88,7 +88,7 @@ namespace CashRegisterSystem.AdminFolder.EditProductFolder
                 }
                 else
                 {
-                    errPlu.ErrorMsg();
+                    errPlu.ErrorMsg("back");
                     continue;
                 }
 

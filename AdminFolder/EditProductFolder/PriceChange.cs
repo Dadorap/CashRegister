@@ -28,7 +28,7 @@ namespace CashRegisterSystem.AdminFolder.EditProductFolder
 
             if (!File.Exists(path) || string.IsNullOrEmpty(File.ReadAllText(path)))
             {
-                errFile.ErrorMsg();
+                errFile.ErrorMsg("back");
                 mainMenu.DisplayMenu();
 
             }
@@ -102,7 +102,7 @@ namespace CashRegisterSystem.AdminFolder.EditProductFolder
                         }
                         else
                         {
-                            errInput.ErrorMsg();
+                            errInput.ErrorMsg("back");
                             continue;
 
                         }
@@ -133,11 +133,11 @@ namespace CashRegisterSystem.AdminFolder.EditProductFolder
                 }
                 catch (OverflowException)
                 {
-                    errOvFlow.ErrorMsg();
+                    errOvFlow.ErrorMsg("back");
                 }
                 catch (FormatException)
                 {
-                    errFormat.ErrorMsg();
+                    errFormat.ErrorMsg("back");
                 }
                 catch (Exception ex)
                 {
